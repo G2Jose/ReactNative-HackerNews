@@ -10,6 +10,11 @@ import Navbar from './src/components/navbar.js';
 import storiesStore from './src/store/stories.js';
 
 class HomeScreen extends React.Component {
+
+  static navigationOptions = {
+    title: 'Welcome',
+  };
+
   componentDidMount() {
     hnapi.getTopStories().then(response => storiesStore.updateStories(response.data));
   }
@@ -24,9 +29,11 @@ class HomeScreen extends React.Component {
   }
 }
 
-// export default App = StackNavigator({
-//   Home: { screen: HomeScreen },
-// });
+const SimpleApp = StackNavigator({
+  Home: { screen: HomeScreen },
+});
+
+console.log(SimpleApp);
 
 export default HomeScreen;
 
