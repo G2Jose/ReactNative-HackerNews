@@ -19,25 +19,29 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#fff',
-    padding: 10,
+    padding: 11,
     paddingLeft: 0,
-    margin: 2,
-    marginLeft: 4,
-    marginRight: 4,
+    marginTop: 5,
+    marginLeft: 7,
+    marginRight: 7,
     shadowColor: "#BFC0BF",
     shadowOpacity: 0.6,
     shadowRadius: 2,
     shadowOffset: {
-      height: 0,
-      width: 0
-    }
+      height: 3,
+      width: 3
+    },
+    borderRadius: 5,
+    // backgroundColor: '#FFA500',
   },
   cardContent: {
   	flex: 6,
   	flexDirection: 'column',
   },
   cardTitle: {
-  	fontSize: 16,
+    fontFamily: 'Helvetica',
+  	fontSize: 17,
+    fontWeight: '400',
   	padding: 1,
   },
   pointsContainer: {
