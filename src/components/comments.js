@@ -1,9 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableHighlight, Button } from 'react-native';
 
+import Comment from './comment.js';
 import Card from './card.js';
 
-const Comment = ({data}) => {
+/*const Comment = ({data}) => {
 	return (
 		<View style={styles.comment}>
 			<Card>
@@ -18,7 +19,7 @@ const Comment = ({data}) => {
 			}
 		</View>
 	)
-}
+}*/
 
 const Comments = ({item}) => {
 	if (item && item.comments) {
@@ -36,19 +37,3 @@ const Comments = ({item}) => {
 
 export default Comments;
 
-const styles = StyleSheet.create({
-  commentContainer: {
-  	paddingTop: 1,
-	paddingBottom: 1,
-	paddingLeft: 11,
-	paddingRight: 11,
-	
-  },
-  comment: {
-	marginLeft: 4,
-  },
-  commentText: {
-	fontFamily: 'Helvetica',
-	fontSize: 16,
-  }
-});
