@@ -1,9 +1,10 @@
 import React from 'react';
 import { observer } from 'mobx-react/native';
-import { ScrollView, Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet } from 'react-native';
 import hnapi from '../utils/api.js';
 
-import Card from './card.js';
+import Headline from './headline.js';
+import ScrollView from './scrollView.js';
 
 @observer
 class Headlines extends React.Component {
@@ -13,26 +14,22 @@ class Headlines extends React.Component {
 	}
 
 	render() {
-		const { storiesStore } = this.props;
+		const { storiesStore, navigateToStory } = this.props;
 		return (
-			<ScrollView style={styles.scrollView}>
+			<ScrollView>
 			{
 				storiesStore && storiesStore.storiesList && storiesStore.storiesList.map((story, i) => {
-					return <Card key={i} title={story.title} points={story.points} />
+					return (
+						<Headline
+							key={i} title={story.title} points={story.points}
+							onPress={() => navigateToStory(story.id)}
+						/>
+					);
 				})
 			}
 			</ScrollView>
 		);
 	}
 }
-
-const styles = StyleSheet.create({
-  scrollView: {
-    flex: 1,
-		backgroundColor: 'orange',
-		paddingLeft: 10,
-		paddingRight: 10,
-  },
-});
 
 export default Headlines;
