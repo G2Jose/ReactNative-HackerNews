@@ -5,6 +5,7 @@ const createStory = (storyData) => ({
 	title: storyData.title,
 	points: storyData.points,
 	content: null,
+	url: storyData.url,
 });
 
 class Stories {
