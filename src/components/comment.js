@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TouchableHighlight, Button } from 'react-native
 
 import Comments from './comments.js';
 import Card from './card.js';
+import { removeHTML } from '../utils/string.js';
 
 class Comment extends React.Component {
 	constructor() {
@@ -25,7 +26,7 @@ class Comment extends React.Component {
 				}>
 					<View style={styles.commentContainer}>
 						<Text style={styles.commentText}>
-							{data.content}
+							{removeHTML(data.content)}
 						</Text>
 					</View>
 				</Card>
