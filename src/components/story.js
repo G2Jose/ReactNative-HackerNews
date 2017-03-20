@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, RefreshControl } from 'react-native';
 import { observer } from 'mobx-react/native';
 
 import Card from './card.js';
@@ -13,25 +13,53 @@ import storiesStore from '../store/stories.js';
 
 @observer
 class Story extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			refreshing: false,
+		};
+	}
 
 	static navigationOptions = {
 		title: 'React Native Hacker News',
 		...navigationOptions,
 	};
 
-	componentDidMount() {
-		const { id } = this.props.navigation.state.params;
+	_updateStory = (id, cb) => {
 		hnapi.getItem(id).then((story) => {
-			storiesStore.updateStory(id, story)
+			storiesStore.updateStory(id, story);
+			if (cb && typeof cb === 'function')
+				cb();
 		})
 		.catch((error) => console.log('error'));
+	}
+
+	componentDidMount() {
+		const { id } = this.props.navigation.state.params;
+		this._updateStory(id);
+	}
+
+	_onRefresh = (id) => {
+		this.setState({
+			refreshing: true,
+		});
+		this._updateStory(id, () => {
+			this.setState({refreshing: false});
+		});
 	}
 
 	render() {
 		const { id } = this.props.navigation.state.params;
 		const story = storiesStore.storiesList.find(story => story.id === id);
 		return (
-			<ScrollView>
+			<ScrollView
+				refreshControl={
+          <RefreshControl
+            refreshing={this.state.refreshing}
+            onRefresh={() => this._onRefresh(id)}
+          />
+        }
+			>
 				<Card>
 					<View style={styles.titleContainer}>
 						<Text style={styles.titleText}>
