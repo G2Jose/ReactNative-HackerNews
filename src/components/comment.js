@@ -9,7 +9,7 @@ class Comment extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			showSubcomments: false,
+			showSubcomments: true,
 		};
 	}
 
@@ -52,7 +52,8 @@ const styles = StyleSheet.create({
 	
   },
   comment: {
-	marginLeft: 6,
+	marginLeft: 2,
+	marginRight: 2,
   },
   commentText: {
 	fontFamily: 'Helvetica',

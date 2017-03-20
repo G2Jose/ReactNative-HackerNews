@@ -7,7 +7,7 @@ const Headline = ({ title, body, points, onPress }) => {
 	return (
 		<Card onPress={onPress}>
 			<View style={styles.pointsContainer}>
-				{points && <Text style={styles.points}>{points}</Text>}
+				<Text style={styles.points}>{points || '0'}</Text>
 			</View>
 			<View style={styles.content}>
 				<Text style={styles.title}>{title}</Text>
