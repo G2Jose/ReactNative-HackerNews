@@ -1,14 +1,17 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { observer } from 'mobx-react/native';
 
 import Card from './card.js';
 import ScrollView from './scrollView.js';
+import Comments from './comments.js';
 
 import { navigationOptions } from '../utils/navigation.js';
 import hnapi from '../utils/api.js';
 
 import storiesStore from '../store/stories.js';
 
+@observer
 class Story extends React.Component {
 
 	static navigationOptions = {
@@ -26,15 +29,17 @@ class Story extends React.Component {
 
 	render() {
 		const { id } = this.props.navigation.state.params;
+		const story = storiesStore.storiesList.find(story => story.id === id);
 		return (
 			<ScrollView>
 				<Card>
 					<View style={styles.titleContainer}>
 						<Text style={styles.titleText}>
-							{storiesStore.storiesList.find(story => story.id === id).title}
+							{story.title}
 						</Text>
 					</View>
 				</Card>
+				<Comments item={story && story.content && story.content.data} />
 			</ScrollView>
 		);
 	}
