@@ -1,9 +1,12 @@
 import React from 'react';
 import { ScrollView as SV, StyleSheet } from 'react-native';
 
-const ScrollView = ({ children }) => {
+const ScrollView = ({ children, ...rest }) => {
 	return (
-		<SV style={styles.scrollView}>
+		<SV
+			style={styles.scrollView}
+			{...rest}
+		>
 			{children}
 		</SV>
 	);
