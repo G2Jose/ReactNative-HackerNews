@@ -2,44 +2,42 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
-import hnapi from './src/utils/api.js';
-
 import Headlines from './src/components/headlines.js';
-import Navbar from './src/components/navbar.js';
-
 import storiesStore from './src/store/stories.js';
+import Story from './src/components/story.js';
 
 class HomeScreen extends React.Component {
-
   static navigationOptions = {
-    title: 'Welcome',
+    title: 'React Native Hacker News',
+    header: {
+      style: {
+        backgroundColor: 'orange'
+      },
+    }
   };
-
-  componentDidMount() {
-    hnapi.getTopStories().then(response => storiesStore.updateStories(response.data));
-  }
 
   render() {
     return (
       <View style={styles.container}>
-        <Navbar title="React Native Hacker News" />
         <Headlines storiesStore={storiesStore} />
       </View>
     );
   }
 }
 
-const SimpleApp = StackNavigator({
+const App = StackNavigator({
   Home: { screen: HomeScreen },
+  Story: { screen: Story },
 });
 
-console.log(SimpleApp);
-
-export default HomeScreen;
+export default App;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#EFEFEF',
   },
+  header: {
+    backgroundColor: 'orange',
+  }
 });
