@@ -3,6 +3,8 @@ import { observer } from 'mobx-react/native';
 import { Text, StyleSheet, RefreshControl } from 'react-native';
 import hnapi from '../utils/api.js';
 
+import {loadingParams} from '../utils/animation.js';
+
 import Headline from './headline.js';
 import ScrollView from './scrollView.js';
 
@@ -11,7 +13,7 @@ class Headlines extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			refreshing: false,
+			refreshing: true,
 		};
 	}
 
@@ -23,7 +25,7 @@ class Headlines extends React.Component {
 		});
 	}
 	componentDidMount() {
-		this._updateStories();
+		this._updateStories(setTimeout(() => this.setState({refreshing: false}), loadingParams.totalDuration));
 	}
 
 	_onRefresh = () => {
@@ -31,7 +33,7 @@ class Headlines extends React.Component {
 			refreshing: true,
 		});
 		this._updateStories(() => {
-			this.setState({refreshing: false});
+			setTimeout(() => this.setState({refreshing: false}), loadingParams.totalDuration);
 		});
 	}
 
@@ -52,6 +54,7 @@ class Headlines extends React.Component {
 						<Headline
 							key={i} title={story.title} points={story.points}
 							onPress={() => navigateToStory(story.id)}
+							loading={this.state.refreshing}
 						/>
 					);
 				})
