@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
   touchable: {
     marginTop: 5,
     borderRadius: 5,
+    flex: 1,
   },
   card: {
     flex: 1,
