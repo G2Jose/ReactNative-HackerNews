@@ -93,12 +93,12 @@ const styles = StyleSheet.create({
 		backgroundColor: 'grey',
 		marginLeft: 10,
 		marginRight: 10,
-		opacity: 0.3,
+		opacity: 0.2,
 	},
 	loadingTitle: {
 		height: 15,
 		backgroundColor: 'grey',
 		margin: 2,
-		opacity: 0.3,
+		opacity: 0.2,
 	},
 });
