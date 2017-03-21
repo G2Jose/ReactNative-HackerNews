@@ -13,9 +13,9 @@ The app currently has the following functionality:
 - Pull to refresh & cool loading animations
 
 ### Screenshots
-<img src="https://raw.githubusercontent.com/G2Jose/ReactHackerNews/master/screenshots/headlines.png" width="300" />
-<img src="https://raw.githubusercontent.com/G2Jose/ReactHackerNews/master/screenshots/story.png" width="300" />
-<img src="https://raw.githubusercontent.com/G2Jose/ReactHackerNews/master/screenshots/video.gif" width="300" />
+
+![Headlines View](https://raw.githubusercontent.com/G2Jose/ReactHackerNews/master/screenshots/headlines.png "Headlines View") ![Story View](https://raw.githubusercontent.com/G2Jose/ReactHackerNews/master/screenshots/story.png "Story View")
+![Demo](https://raw.githubusercontent.com/G2Jose/ReactHackerNews/master/screenshots/video.gif "Demo")
 
 ## How to run
 1. Install node, npm
