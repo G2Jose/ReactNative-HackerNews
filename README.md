@@ -1,7 +1,8 @@
 # React Native Hacker News
 
-A HackerNews client built on React Native using CRNA, Expo and MobX
-[Download Link](https://exp.host/@gejose/hacker-news)
+A cross-platform HackerNews client built on React Native using CRNA, Expo and MobX
+
+<p align="center"><a href="https://exp.host/@gejose/hacker-news"><img src="https://raw.githubusercontent.com/G2Jose/ReactHackerNews/master/screenshots/expo.png" width="600" /></a></p>
 
 ## Status
 
