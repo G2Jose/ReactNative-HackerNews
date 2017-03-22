@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
   	flexDirection: 'column',
   },
   title: {
-    fontFamily: 'Helvetica',
   	fontSize: 17,
     fontWeight: '400',
   	padding: 1,

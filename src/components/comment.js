@@ -102,7 +102,6 @@ const styles = StyleSheet.create({
 		// marginRight: 1,
 	},
 	commentText: {
-		fontFamily: 'Helvetica',
 		fontSize: 16,
 	},
 	loadingCommentText: {

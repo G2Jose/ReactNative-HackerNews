@@ -82,7 +82,6 @@ export default Story;
 
 const styles = StyleSheet.create({
   titleText: {
-	fontFamily: 'Helvetica',
 	fontSize: 18,
     fontWeight: '500',
   	padding: 1,
@@ -91,7 +90,6 @@ const styles = StyleSheet.create({
 	  padding: 10,
   },
   link: {
-  	fontFamily: 'Helvetica',
   	color: 'blue',
   	padding: 1,
   },
