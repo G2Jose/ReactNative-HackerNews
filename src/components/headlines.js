@@ -55,6 +55,9 @@ class Headlines extends React.Component {
 							key={i} title={story.title} points={story.points}
 							onPress={() => navigateToStory(story.id)}
 							loading={this.state.refreshing}
+							timeAgo={story.timeAgo}
+							commentCount={story.commentCount}
+							author={story.author}
 						/>
 					);
 				})
