@@ -1,6 +1,6 @@
 import React from 'react';
 import { observer } from 'mobx-react/native';
-import { Text, StyleSheet, RefreshControl } from 'react-native';
+import { RefreshControl } from 'react-native';
 import hnapi from '../utils/api.js';
 
 import { loadingParams } from '../utils/animation.js';
@@ -46,7 +46,7 @@ class Headlines extends React.Component {
     return (
       <ScrollView refreshControl={ <RefreshControl refreshing={ this.state.refreshing } onRefresh={ this._onRefresh } /> }>
         { storiesStore && storiesStore.storiesList && storiesStore.storiesList.map((story, i) => {
-            return (
+          return (
               <Headline
                 key={ i }
                 title={ story.title }
@@ -57,10 +57,10 @@ class Headlines extends React.Component {
                 commentCount={ story.commentCount }
                 author={ story.author }
               />
-              );
-          }) }
+          );
+        }) }
       </ScrollView>
-      );
+    );
   }
 }
 

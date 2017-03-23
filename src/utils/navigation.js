@@ -4,6 +4,6 @@ const navigationOptions = {
       backgroundColor: 'orange'
     },
   }
-}
+};
 
 export { navigationOptions, };

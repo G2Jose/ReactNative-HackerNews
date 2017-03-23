@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableHighlight, Button, Animated } from 'react-native';
+import { View, Text, StyleSheet, Animated } from 'react-native';
 
 import { loadingParams, createRepeatingFadeAnimation } from '../utils/animation.js';
 import Card from './card.js';
@@ -27,37 +27,37 @@ class LoadingHeadline extends React.Component {
       <Card>
         <View style={ styles.loadingPointsContainer }>
           <Animated.View style={ StyleSheet.flatten([styles.loadingPoints, {
-                                   opacity: this.state.fadeAnim
-                                 }]) }>
+            opacity: this.state.fadeAnim
+          }]) }>
           </Animated.View>
         </View>
         <View style={ styles.content }>
           <Animated.View style={ StyleSheet.flatten([styles.loadingTitle, {
-                                   opacity: this.state.fadeAnim
-                                 }]) } />
+            opacity: this.state.fadeAnim
+          }]) } />
           <Animated.View style={ StyleSheet.flatten([styles.loadingTitle, {
-                                   opacity: this.state.fadeAnim
-                                 }]) } />
+            opacity: this.state.fadeAnim
+          }]) } />
           <View style={ styles.info }>
             <View style={ styles.loadingInfoContainer }>
               <Animated.View style={ StyleSheet.flatten([styles.loadingInfoText, {
-                                       opacity: this.state.fadeAnim
-                                     }]) } />
+                opacity: this.state.fadeAnim
+              }]) } />
             </View>
             <View style={ styles.loadingInfoContainer }>
               <Animated.View style={ StyleSheet.flatten([styles.loadingInfoText, {
-                                       opacity: this.state.fadeAnim
-                                     }]) } />
+                opacity: this.state.fadeAnim
+              }]) } />
             </View>
             <View style={ styles.loadingInfoContainer }>
               <Animated.View style={ StyleSheet.flatten([styles.loadingInfoText, {
-                                       opacity: this.state.fadeAnim
-                                     }]) } />
+                opacity: this.state.fadeAnim
+              }]) } />
             </View>
           </View>
         </View>
       </Card>
-      );
+    );
   }
 }
 
@@ -97,8 +97,8 @@ const Headline = ({loading, title, body, points, onPress, timeAgo, commentCount,
         </View>
       </View>
     </Card>
-    );
-}
+  );
+};
 
 export default Headline;
 

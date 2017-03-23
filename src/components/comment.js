@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableHighlight, Button, Linking, Animated } from 'react-native';
+import { View, Text, StyleSheet, Animated } from 'react-native';
 
 import { loadingParams, createRepeatingFadeAnimation } from '../utils/animation.js';
 
@@ -31,21 +31,21 @@ class LoadingComment extends React.Component {
         <Card>
           <View style={ styles.commentContainer }>
             <Animated.View style={ StyleSheet.flatten([styles.loadingCommentText, {
-                                     opacity: this.state.fadeAnim
-                                   }]) } />
+              opacity: this.state.fadeAnim
+            }]) } />
             <Animated.View style={ StyleSheet.flatten([styles.loadingCommentText, {
-                                     opacity: this.state.fadeAnim
-                                   }]) } />
+              opacity: this.state.fadeAnim
+            }]) } />
             <Animated.View style={ StyleSheet.flatten([styles.loadingCommentText, {
-                                     opacity: this.state.fadeAnim
-                                   }]) } />
+              opacity: this.state.fadeAnim
+            }]) } />
             <Animated.View style={ StyleSheet.flatten([styles.loadingCommentText, {
-                                     opacity: this.state.fadeAnim
-                                   }]) } />
+              opacity: this.state.fadeAnim
+            }]) } />
           </View>
         </Card>
       </View>
-      );
+    );
   }
 }
 
@@ -62,10 +62,10 @@ class Comment extends React.Component {
     return (
       <View style={ styles.comment }>
         <Card bigShadow={ data.comments && data.comments.length > 0 && !this.state.showSubcomments || false } onPress={ () => {
-                                                                                                                          this.setState({
-                                                                                                                            showSubcomments: !this.state.showSubcomments,
-                                                                                                                          })
-                                                                                                                        } }>
+          this.setState({
+            showSubcomments: !this.state.showSubcomments,
+          });
+        } }>
           <View style={ styles.commentContainer }>
             <Text style={ styles.commentText }>
               { removeHTML(data.content) }
@@ -94,7 +94,7 @@ class Comment extends React.Component {
           this.state.showSubcomments &&
           <Comments item={ data } /> }
       </View>
-    )
+    );
   }
 }
 

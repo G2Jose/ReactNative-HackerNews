@@ -8,8 +8,8 @@ const ScrollView = ({children, ...rest}) => {
         { children }
       </View>
     </SV>
-    );
-}
+  );
+};
 
 const styles = StyleSheet.create({
   scrollView: {
