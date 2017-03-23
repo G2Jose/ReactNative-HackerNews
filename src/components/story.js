@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
 	fontSize: 14,
   },
   content: {
-  	flex: 8,
+  	flex: 6,
   	flexDirection: 'column',
   },
   titleText: {
@@ -120,6 +120,7 @@ const styles = StyleSheet.create({
   pointsContainer: {
   	flex: 1,
   	alignItems: 'center',
+  	paddingRight: 5.5,
   },
   points: {
     fontWeight: 'bold',
