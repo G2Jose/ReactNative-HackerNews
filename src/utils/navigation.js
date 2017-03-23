@@ -1,11 +1,9 @@
 const navigationOptions = {
-	header: {
-      style: {
-        backgroundColor: 'orange'
-      },
-    }
+  header: {
+    style: {
+      backgroundColor: 'orange'
+    },
+  }
 }
 
-export {
-	navigationOptions,
-};
+export { navigationOptions, };
