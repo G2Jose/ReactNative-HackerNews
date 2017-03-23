@@ -42,6 +42,23 @@ class LoadingComment extends React.Component {
             <Animated.View style={ StyleSheet.flatten([styles.loadingCommentText, {
               opacity: this.state.fadeAnim
             }]) } />
+            <View style={ styles.info }>
+              <View style={ styles.loadingInfoContainer }>
+                <Animated.View style={ StyleSheet.flatten([styles.loadingInfoText, {
+                  opacity: this.state.fadeAnim
+                }]) } />
+              </View>
+              <View style={ styles.loadingInfoContainer }>
+                <Animated.View style={ StyleSheet.flatten([styles.loadingInfoText, {
+                  opacity: this.state.fadeAnim
+                }]) } />
+              </View>
+              <View style={ styles.loadingInfoContainer }>
+                <Animated.View style={ StyleSheet.flatten([styles.loadingInfoText, {
+                  opacity: this.state.fadeAnim
+                }]) } />
+              </View>
+            </View>
           </View>
         </Card>
       </View>
@@ -124,6 +141,15 @@ const styles = StyleSheet.create({
     marginBottom: 2,
     opacity: 0.2,
   },
+  loadingInfoText: {
+    height: 15,
+    backgroundColor: 'grey',
+    marginTop: 2,
+    marginBottom: 2,
+    opacity: 0.2,
+    marginLeft: 2,
+    marginRight: 2,
+  },
   info: {
     flexDirection: 'row',
     flex: 1,
@@ -138,5 +164,8 @@ const styles = StyleSheet.create({
   },
   infoText: {
     fontSize: 14,
+  },
+  loadingInfoContainer: {
+    flex: 1,
   },
 });
