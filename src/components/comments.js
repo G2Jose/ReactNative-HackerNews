@@ -35,7 +35,7 @@ class Comments extends React.Component {
       this.state.springValue,
       {
         toValue: 1,
-        friction: 5,
+        friction: 10,
       }
     ).start();
   }
