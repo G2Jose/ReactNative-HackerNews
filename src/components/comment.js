@@ -155,8 +155,8 @@ const styles = StyleSheet.create({
     flex: 1,
     borderTopColor: 'grey',
     borderTopWidth: StyleSheet.hairlineWidth,
-    marginTop: 3,
-    paddingTop: 3,
+    marginTop: 7,
+    paddingTop: 7,
   },
   infoContainer: {
     flex: 1,
