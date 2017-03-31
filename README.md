@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-	<strong>React Native Hacker News</strong>
+	<strong><h1>React Native Hacker News</h1></strong>
 </p>
 A cross-platform HackerNews client built on React Native using CRNA, Expo and MobX
 
