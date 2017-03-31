@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/G2Jose/ReactNative-HackerNews/master/screenshots/logo.jpg" width="100" />
+    <img src="https://raw.githubusercontent.com/G2Jose/ReactNative-HackerNews/master/screenshots/logo.jpg" width="200" />
 </p>
 
 <p align="center">
