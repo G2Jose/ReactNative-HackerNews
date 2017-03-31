@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://exp.host/@gejose/hacker-news"><img src="https://raw.githubusercontent.com/G2Jose/ReactNative-HackerNews/master/screenshots/ReactNativeHackerNewsIcon.png" width="100" /></a>
+    <img src="https://raw.githubusercontent.com/G2Jose/ReactNative-HackerNews/master/screenshots/logo.jpg" width="100" />
 </p>
 
 <p align="center">
