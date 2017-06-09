@@ -27,7 +27,7 @@ class Headlines extends React.Component {
   componentDidMount() {
     this._updateStories(setTimeout(() => this.setState({
       refreshing: false
-    }), loadingParams.totalDuration));
+    }), loadingParams.minAnimationDuration));
   }
 
   _onRefresh = () => {
@@ -37,7 +37,7 @@ class Headlines extends React.Component {
     this._updateStories(() => {
       setTimeout(() => this.setState({
         refreshing: false
-      }), loadingParams.totalDuration);
+      }), loadingParams.minAnimationDuration);
     });
   }
 
