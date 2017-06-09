@@ -1016,6 +1016,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.georgejose.reactnativehackernews;
 				PRODUCT_NAME = hackernews;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1034,6 +1035,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.georgejose.reactnativehackernews;
 				PRODUCT_NAME = hackernews;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
