@@ -1,7 +1,7 @@
 const navigationOptions = {
   headerStyle: {
-    backgroundColor: 'orange'
-  },
+    backgroundColor: "orange"
+  }
 };
 
-export { navigationOptions, };
+export { navigationOptions };

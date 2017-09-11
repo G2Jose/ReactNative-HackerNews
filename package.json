@@ -21,7 +21,8 @@
     "ios": "react-native-scripts ios",
     "test": "node node_modules/jest/bin/jest.js --watch",
     "beautify": "./node_modules/.bin/esformatter -i 'src/**/*.js'",
-    "lint": "./node_modules/.bin/eslint '**/*.js' --ignore-pattern 'node_modules/**/*.*' --ignore-pattern 'App.test.js'"
+    "lint":
+      "./node_modules/.bin/eslint '**/*.js' --ignore-pattern 'node_modules/**/*.*' --ignore-pattern 'App.test.js'"
   },
   "jest": {
     "preset": "jest-expo"
