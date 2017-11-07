@@ -1,44 +1,80 @@
-import React from "react";
-import { StyleSheet, View } from "react-native";
-import { StackNavigator } from "react-navigation";
+import React from 'react';
+import { TabNavigator } from 'react-navigation';
+import { Provider } from 'react-redux';
+import { StatusBar, View } from 'react-native';
+import { Constants } from 'expo';
+import 'rxjs';
 
-import Headlines from "./src/components/headlines.js";
-import storiesStore from "./src/store/stories.js";
-import Story from "./src/components/story.js";
+import store from 'common/store/store';
 
-import { navigationOptions } from "./src/utils/navigation.js";
+import Top from 'top/screens/top';
+import New from 'new/screens/new';
+import Show from 'show/screens/show';
+import Ask from 'ask/screens/ask';
+import Jobs from 'jobs/screens/jobs';
 
-class HomeScreen extends React.Component {
-  static navigationOptions = {
-    title: "React Native Hacker News",
-    ...navigationOptions
-  };
+// eslint-disable-next-line no-global-assign
+XMLHttpRequest = GLOBAL.originalXMLHttpRequest
+  ? GLOBAL.originalXMLHttpRequest
+  : GLOBAL.XMLHttpRequest;
 
-  navigateToStory = id => {
-    const { navigate } = this.props.navigation;
-    navigate("Story", { id });
-  };
-  render() {
-    return (
-      <View style={styles.container}>
-        <Headlines
-          storiesStore={storiesStore}
-          navigateToStory={this.navigateToStory}
-        />
-      </View>
-    );
+const Navigation = TabNavigator(
+  {
+    Top: {
+      screen: Top,
+    },
+    New: {
+      screen: New,
+    },
+    Show: {
+      screen: Show,
+    },
+    Ask: {
+      screen: Ask,
+    },
+    Jobs: {
+      screen: Jobs,
+    },
+  },
+  {
+    tabBarPosition: 'bottom',
+    animationEnabled: true,
+    lazy: true,
+    tabBarOptions: {
+      activeTintColor: '#000000',
+      activeBackgroundColor: '#FF6701',
+      showIcon: true,
+      labelStyle: {
+        color: 'black',
+      },
+      style: {
+        backgroundColor: '#F7F7F7',
+      },
+      indicatorStyle: {
+        backgroundColor: '#FF6701',
+      },
+    },
   }
-}
+);
 
-const App = StackNavigator({
-  Home: { screen: HomeScreen },
-  Story: { screen: Story }
-});
+const App = () => (
+  <View
+    style={{
+      flex: 1,
+      flexDirection: 'row',
+      backgroundColor: '#F6F6EF',
+      paddingTop: Constants.statusBarHeight,
+    }}
+  >
+    <StatusBar backgroundColor="orange" barStyle="dark-content" />
+    <Navigation />
+  </View>
+);
 
-export default App;
+const ReduxApp = () => (
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  }
-});
+export default ReduxApp;
