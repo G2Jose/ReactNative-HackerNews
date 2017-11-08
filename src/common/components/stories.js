@@ -4,7 +4,10 @@ import { StackNavigator } from 'react-navigation';
 
 import Headline from 'common/components/headline';
 import Story from 'common/components/story';
-import { mapScreenPropsToProps } from 'common/navigation';
+import {
+  mapScreenPropsToProps,
+  mapNavigationStateParamsToProps,
+} from 'common/navigation';
 
 class Headlines extends React.Component {
   constructor(props) {
@@ -35,7 +38,10 @@ class Headlines extends React.Component {
           }
           data={this.props.stories}
           renderItem={({ item }) => (
-            <Headline {...item} viewDetails={() => navigate('Details')} />
+            <Headline
+              {...item}
+              viewDetails={() => navigate('Details', { data: item })}
+            />
           )}
           keyExtractor={(item, index) => index}
         />
@@ -44,16 +50,21 @@ class Headlines extends React.Component {
   }
 }
 
+Headlines.navigationOptions = {
+  header: null,
+};
+
 const Stories = StackNavigator(
   {
     Home: {
       screen: mapScreenPropsToProps(Headlines),
+      header: null,
     },
     Details: {
-      screen: Story,
+      screen: mapNavigationStateParamsToProps(Story),
     },
   },
-  { headerMode: 'none', initialRouteName: 'Home' }
+  { initialRouteName: 'Home', headerMode: 'screen' }
 );
 
 export default Stories;
