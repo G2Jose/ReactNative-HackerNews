@@ -10,7 +10,7 @@ const Comment = props => {
     return (
       <TouchableOpacity>
         <View style={styles.container}>
-          <Text style={styles.headlineText}>{text}</Text>
+          <Text style={styles.commentText}>{text}</Text>
           <View style={styles.metaRow}>
             <Text style={styles.metaText}>
               {numComments} {numComments === 1 ? 'comment' : 'comments'}
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
   },
-  headlineText: {
+  commentText: {
     fontSize: 15,
   },
   loadingTitle: {
