@@ -40,7 +40,7 @@ class Headlines extends React.Component {
           renderItem={({ item }) => (
             <Headline
               {...item}
-              viewDetails={() => navigate('Details', { data: item })}
+              viewDetails={() => navigate('Details', { story: item })}
             />
           )}
           keyExtractor={(item, index) => index}
