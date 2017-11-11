@@ -21,7 +21,7 @@ class Comment extends React.Component {
       return '[+]';
     if (this.state.expanded && this.props.kids && this.props.kids.length > 0)
       return '[-]';
-    return '';
+    return '[ ]';
   }
 
   render() {
