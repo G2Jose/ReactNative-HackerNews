@@ -16,6 +16,14 @@ class Comment extends React.Component {
     }
   }
 
+  symbolToDisplay() {
+    if (!this.state.expanded && this.props.kids && this.props.kids.length > 0)
+      return '[+]';
+    if (this.state.expanded && this.props.kids && this.props.kids.length > 0)
+      return '[-]';
+    return '';
+  }
+
   render() {
     const { _loading, text, by, kids, items } = this.props;
     const numComments = (kids && kids.length) || 0;
@@ -25,7 +33,11 @@ class Comment extends React.Component {
           onPress={() => this.setState({ expanded: !this.state.expanded })}
         >
           <View style={styles.container}>
-            {text ? <HTML html={text} /> : <Text />}
+            {text ? (
+              <HTML html={`${this.symbolToDisplay()} ${text}`} />
+            ) : (
+              <Text />
+            )}
             <View style={styles.metaRow}>
               <Text style={styles.metaText}>
                 {numComments} {numComments === 1 ? 'comment' : 'comments'}
