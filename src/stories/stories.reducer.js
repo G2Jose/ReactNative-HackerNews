@@ -1,7 +1,6 @@
 import { handleActions } from 'redux-actions';
 
 import { idsFetched, fetchIds } from 'stories/stories.actions';
-import { numStoriesToDisplay } from 'common/constants';
 
 export default handleActions(
   {
@@ -9,7 +8,7 @@ export default handleActions(
       const { ids, type } = action.payload;
       const newState = { ...state };
       if (newState[type]) {
-        newState[type] = ids.filter((_, index) => index < numStoriesToDisplay);
+        newState[type] = ids;
       }
       return newState;
     },

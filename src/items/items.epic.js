@@ -19,19 +19,20 @@ const fetchItemEpic = action$ =>
     );
 
 const fetchIdsEpic = action$ =>
-  action$
-    .ofType(fetchIds().type)
-    .mergeMap(action =>
-      ajax
-        .getJSON(getIdsUrl(action.payload.type))
-        .map(ids => idsFetched({ ids, type: action.payload.type }))
-    );
+  action$.ofType(fetchIds().type).mergeMap(action =>
+    ajax.getJSON(getIdsUrl(action.payload.type)).map(ids =>
+      idsFetched({
+        ids: ids.filter((id, index) => index < numStoriesToDisplay),
+        type: action.payload.type,
+      })
+    )
+  );
 
 const fetchItemsForIdsEpic = action$ =>
-  action$.ofType(idsFetched().type).mergeMap(action =>
-    Observable.from(action.payload.ids)
-      .take(numStoriesToDisplay)
-      .map(id => fetchItem({ id }))
-  );
+  action$
+    .ofType(idsFetched().type)
+    .mergeMap(action =>
+      Observable.from(action.payload.ids).map(id => fetchItem({ id }))
+    );
 
 export default combineEpics(fetchItemEpic, fetchIdsEpic, fetchItemsForIdsEpic);
