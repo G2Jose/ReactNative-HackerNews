@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/G2Jose/ReactNative-HackerNews.svg?branch=master)](https://travis-ci.org/G2Jose/ReactNative-HackerNews)
+
 <p align="center">
     <img src="https://raw.githubusercontent.com/G2Jose/ReactNative-HackerNews/master/screenshots/logo.jpg" width="200" />
 </p>
