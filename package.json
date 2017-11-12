@@ -26,6 +26,8 @@
     "ios": "react-native-scripts ios",
     "test":
       "NODE_PATH=src node node_modules/jest/bin/jest.js --verbose --watch",
+    "test:ci":
+      "CI=true NODE_PATH=src node node_modules/jest/bin/jest.js --verbose",
     "precommit": "lint-staged",
     "prettify":
       "prettier \"./**/*.{js,json,css}\" --config .prettierrc.json -l --write",
