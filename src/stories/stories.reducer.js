@@ -1,6 +1,6 @@
 import { handleActions } from 'redux-actions';
 
-import { idsFetched, fetchIds } from 'items/items.actions';
+import { idsFetched, fetchIds } from 'stories/stories.actions';
 import { numStoriesToDisplay } from 'common/constants';
 
 export default handleActions(

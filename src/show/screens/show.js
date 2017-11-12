@@ -1,26 +1,16 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Icon } from 'react-native-elements';
 
-import Stories from 'common/components/stories';
+import Stories from 'stories/stories';
+import { withStoryData } from 'stories/stories.utils';
 
-import { fetchShowStories } from 'show/show.actions';
-
-const Show = props => <Stories screenProps={props} />;
+const Show = ({ stories, fetchStories }) => (
+  <Stories screenProps={{ stories, fetchStories }} />
+);
 
 Show.navigationOptions = {
   tabBarLabel: 'Show',
   tabBarIcon: () => <Icon name="tv" type="font-awesome" />,
 };
 
-const mapStateToProps = state => ({
-  stories: state.showStories,
-});
-
-const mapDispatchToProps = dispatch => ({
-  fetchStories: () => {
-    dispatch(fetchShowStories());
-  },
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Show);
+export default withStoryData(Show, 'show');

@@ -1,16 +1,16 @@
 import React from 'react';
-import { View } from 'react-native';
 import { Icon } from 'react-native-elements';
 
-class Ask extends React.Component {
-  render() {
-    return <View />;
-  }
-}
+import Stories from 'stories/stories';
+import { withStoryData } from 'stories/stories.utils';
+
+const Ask = ({ stories, fetchStories }) => (
+  <Stories screenProps={{ stories, fetchStories }} />
+);
 
 Ask.navigationOptions = {
   tabBarLabel: 'Ask',
   tabBarIcon: () => <Icon name="question" type="font-awesome" />,
 };
 
-export default Ask;
+export default withStoryData(Ask, 'ask');
