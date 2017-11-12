@@ -45,6 +45,7 @@
     "redux-actions": "^2.2.1",
     "redux-observable": "^0.16.0",
     "remote-redux-devtools": "^0.5.12",
+    "reselect": "^3.0.1",
     "rxjs": "^5.5.1"
   },
   "lint-staged": {

@@ -1,9 +1,19 @@
 import { ajax } from 'rxjs/observable/dom/ajax';
+import { combineEpics } from 'redux-observable';
 
-import { getItemUrl } from 'common/api/urls';
-import { fetchItem, itemFetched } from 'items/items.actions';
+import { Observable } from 'rxjs';
 
-const itemEpic = action$ =>
+import { getItemUrl, getIdsUrl } from 'common/api/urls';
+import { numStoriesToDisplay } from 'common/constants';
+
+import {
+  fetchItem,
+  itemFetched,
+  fetchIds,
+  idsFetched,
+} from 'items/items.actions';
+
+const fetchItemEpic = action$ =>
   action$
     .ofType(fetchItem().type)
     .mergeMap(action =>
@@ -12,4 +22,20 @@ const itemEpic = action$ =>
         .map((item, index) => itemFetched({ item, index }))
     );
 
-export default itemEpic;
+const fetchIdsEpic = action$ =>
+  action$
+    .ofType(fetchIds().type)
+    .mergeMap(action =>
+      ajax
+        .getJSON(getIdsUrl(action.payload.type))
+        .map(ids => idsFetched({ ids, type: action.payload.type }))
+    );
+
+const fetchItemsForIdsEpic = action$ =>
+  action$.ofType(idsFetched().type).mergeMap(action =>
+    Observable.from(action.payload.ids)
+      .take(numStoriesToDisplay)
+      .map(id => fetchItem({ id }))
+  );
+
+export default combineEpics(fetchItemEpic, fetchIdsEpic, fetchItemsForIdsEpic);
