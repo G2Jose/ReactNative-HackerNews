@@ -1,5 +1,16 @@
 {
   "expo": {
-    "sdkVersion": "21.0.0"
+    "name": "Hacker News",
+    "slug": "rnhn",
+    "sdkVersion": "15.0.0",
+    "icon":
+      "https://raw.githubusercontent.com/G2Jose/ReactNative-HackerNews/master/screenshots/logo.jpg",
+    "version": "3.0.0",
+    "ios": {
+      "bundleIdentifier": "com.georgejose.reactnativehackernews"
+    },
+    "android": {
+      "package": "com.georgejose.reactnativehackernews"
+    }
   }
 }
