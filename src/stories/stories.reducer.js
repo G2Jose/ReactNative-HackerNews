@@ -22,6 +22,6 @@ export default handleActions(
     new: [],
     show: [],
     ask: [],
-    jobs: [],
+    job: [],
   }
 );
