@@ -44,6 +44,10 @@ const Navigation = TabNavigator(
       activeTintColor: '#000000',
       activeBackgroundColor: '#FF6701',
       showIcon: true,
+      iconStyle: {
+        width: 35,
+        height: 30,
+      },
       labelStyle: {
         color: 'black',
       },
