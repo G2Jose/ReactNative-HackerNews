@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
-
-const Separator = () => <Text style={styles.metaText}> | </Text>;
+import Separator from 'common/components/separator';
 
 const Headline = ({ _loading, title, by, score, descendants, viewDetails }) => {
   if (!_loading) {
