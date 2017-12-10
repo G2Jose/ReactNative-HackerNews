@@ -1,15 +1,17 @@
 import { numStoriesToDisplay } from 'common/constants';
 
-export const createPlaceholderStories = n =>
-  new Array(n).fill({
-    _loaded: false,
-    _loading: true,
-  });
+const loadingItem = {
+  _loaded: false,
+  _loading: true,
+};
 
-export const padWithPlaceholderStories = (
-  arrayOfStories,
+export const createPlaceholderItems = n =>
+  n === 1 ? loadingItem : new Array(n).fill(loadingItem);
+
+export const padWithLoadingItems = (
+  arrayToPad,
   targetLength = numStoriesToDisplay
 ) => [
-  ...arrayOfStories,
-  ...createPlaceholderStories(targetLength - arrayOfStories.length),
+  ...arrayToPad,
+  ...createPlaceholderItems(targetLength - arrayToPad.length),
 ];
