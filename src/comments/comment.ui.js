@@ -19,14 +19,12 @@ class Comment extends React.Component {
   }
 
   numKids() {
-    const { kids } = this.props;
-    return (kids && kids.length) || 0;
+    return (this.props && this.props.kids && this.props.kids.length) || 0;
   }
 
   symbolToDisplay() {
-    const { state: { expanded }, numKids } = this;
-    if (!expanded && numKids() > 0) return '+';
-    if (expanded && numKids() > 0) return '-';
+    if (this.state && !this.state.expanded && this.numKids() > 0) return '+';
+    if (this.state && this.state.expanded && this.numKids() > 0) return '-';
     return '';
   }
 
