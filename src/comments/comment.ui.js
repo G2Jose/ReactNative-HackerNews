@@ -12,18 +12,21 @@ class Comment extends React.Component {
   }
 
   componentDidMount() {
-    if (!this.props._loading && !this.props._loaded) {
-      this.props.fetchComment(this.props.id);
+    const { _loading, _loaded, fetchComment, id } = this.props;
+    if (!_loading && !_loaded) {
+      fetchComment(id);
     }
   }
 
   numKids() {
-    return (this.props.kids && this.props.kids.length) || 0;
+    const { kids } = this.props;
+    return (kids && kids.length) || 0;
   }
 
   symbolToDisplay() {
-    if (!this.state.expanded && this.numKids() > 0) return '+';
-    if (this.state.expanded && this.numKids() > 0) return '-';
+    const { state: { expanded }, numKids } = this;
+    if (!expanded && numKids() > 0) return '+';
+    if (expanded && numKids() > 0) return '-';
     return '';
   }
 
@@ -32,20 +35,26 @@ class Comment extends React.Component {
   }
 
   render() {
-    const { _loading, text, by, kids, items, id, fetchComment } = this.props;
-    const numComments = this.numKids();
+    const {
+      props: { _loading, text, by, kids, items, id, fetchComment },
+      state: { expanded },
+      numKids,
+      handleExpand,
+      symbolToDisplay,
+    } = this;
+    const numComments = numKids();
     if (!_loading) {
       return (
-        <TouchableOpacity onPress={this.handleExpand.bind(this)}>
+        <TouchableOpacity onPress={handleExpand.bind(this)}>
           <View style={styles.container}>
             {text ? <HTML html={text} /> : <Text />}
             <MetaRow
               numComments={numComments}
-              expandSymbol={this.symbolToDisplay()}
+              expandSymbol={symbolToDisplay()}
               id={id}
               by={by}
             />
-            {this.state.expanded &&
+            {expanded &&
               kids &&
               kids.map(
                 _id =>
