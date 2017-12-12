@@ -2,6 +2,8 @@ import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import Separator from 'common/components/separator';
 
+import { colors } from 'common/constants';
+
 const Headline = ({ _loading, title, by, score, descendants, viewDetails }) => {
   if (!_loading) {
     return (
@@ -36,16 +38,18 @@ const Headline = ({ _loading, title, by, score, descendants, viewDetails }) => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
-    marginLeft: 10,
-    marginRight: 10,
+    paddingTop: 10,
+    paddingBottom: 10,
+    borderWidth: 0,
+    borderColor: '#d6d7da',
+    borderBottomWidth: 0.5,
   },
   headlineText: {
     fontSize: 17,
     fontWeight: 'bold',
   },
   loadingTitle: {
-    backgroundColor: '#999999',
+    backgroundColor: colors.loadingTextPlaceholder,
     height: 17,
     marginTop: 3,
     marginBottom: 3,

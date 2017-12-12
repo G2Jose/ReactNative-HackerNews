@@ -39,10 +39,12 @@ class Headlines extends React.Component {
           }
           data={stories}
           renderItem={({ item }) => (
-            <Headline
-              {...item}
-              viewDetails={() => navigate('Details', { story: item })}
-            />
+            <View style={styles.headlineContainer}>
+              <Headline
+                {...item}
+                viewDetails={() => navigate('Details', { story: item })}
+              />
+            </View>
           )}
           keyExtractor={(item, index) => index}
         />
@@ -73,5 +75,9 @@ export default Stories;
 const styles = StyleSheet.create({
   stories: {
     backgroundColor: '#F6F6EF',
+  },
+  headlineContainer: {
+    paddingLeft: 15,
+    paddingRight: 15,
   },
 });
