@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, FlatList, RefreshControl, StyleSheet } from 'react-native';
+import {
+  View,
+  FlatList,
+  RefreshControl,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 import Headline from 'common/components/headline';
@@ -40,10 +46,11 @@ class Headlines extends React.Component {
           data={stories}
           renderItem={({ item }) => (
             <View style={styles.headlineContainer}>
-              <Headline
-                {...item}
-                viewDetails={() => navigate('Details', { story: item })}
-              />
+              <TouchableOpacity
+                onPress={() => navigate('Details', { story: item })}
+              >
+                <Headline {...item} />
+              </TouchableOpacity>
             </View>
           )}
           keyExtractor={(item, index) => index}

@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, StyleSheet, FlatList } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity,
+  Linking,
+} from 'react-native';
 import { connect } from 'react-redux';
 
 import { colors } from 'common/constants';
@@ -30,7 +36,11 @@ class Story extends React.Component {
     return (
       <View style={styles.storyContainer}>
         <View style={styles.headlineContainer}>
-          <Headline {...story} />
+          <TouchableOpacity
+            onPress={() => (story.url ? Linking.openURL(story.url) : {})}
+          >
+            <Headline {...story} type="hyperlink" />
+          </TouchableOpacity>
         </View>
         {comments.length > 0 && (
           <FlatList
