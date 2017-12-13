@@ -12,6 +12,8 @@ import Show from 'show/screens/show';
 import Ask from 'ask/screens/ask';
 import Jobs from 'jobs/screens/jobs';
 
+import StorybookUI from './storybook';
+
 // eslint-disable-next-line no-global-assign
 XMLHttpRequest = GLOBAL.originalXMLHttpRequest
   ? GLOBAL.originalXMLHttpRequest
@@ -82,4 +84,4 @@ const ReduxApp = () => (
   </Provider>
 );
 
-export default ReduxApp;
+export default (process.env.storybook === 'true' ? StorybookUI : ReduxApp);
