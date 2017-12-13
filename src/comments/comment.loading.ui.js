@@ -2,11 +2,12 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
 import Separator from 'common/components/separator';
+import { colors } from 'common/constants';
 
 export default () => (
   <View style={styles.container}>
-    <View style={styles.loadingTitle} />
-    <View style={styles.loadingTitle} />
+    <View style={styles.loadingComment} />
+    <View style={styles.loadingComment} />
     <View style={styles.metaRow}>
       <View style={styles.metaTextLoading} />
       <Separator />
@@ -29,5 +30,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#999999',
     height: 17,
     width: 75,
+  },
+  loadingComment: {
+    backgroundColor: colors.loadingTextPlaceholder,
+    height: 17,
+    marginTop: 3,
+    marginBottom: 3,
   },
 });
