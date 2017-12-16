@@ -5,8 +5,8 @@ import { fetchIds } from 'stories/stories.actions';
 import { getStoriesOfType } from 'stories/stories.selectors';
 
 export const withStoryData = (Component, type = 'top') => {
-  const WithStoryData = ({ fetchStories, stories }) => (
-    <Component stories={stories} fetchStories={fetchStories} />
+  const WithStoryData = ({ fetchStories, stories, ...rest }) => (
+    <Component stories={stories} fetchStories={fetchStories} {...rest} />
   );
 
   const mapStateToProps = state => ({
