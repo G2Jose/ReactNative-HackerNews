@@ -2,7 +2,7 @@ const checkIfKidsHaveChanged = (kidIds, oldItems, newItems) =>
   kidIds.reduce((acc, curr) => acc || oldItems[curr] !== newItems[curr], false);
 
 export const recursivelyCheckIfKidsChanged = (kidIds, oldItems, newItems) => {
-  if (!kidIds || kidIds.length === 0) return false;
+  if (!kidIds || kidIds.length === 0 || !newItems) return false;
   const isCurrentLevelDifferent = checkIfKidsHaveChanged(
     kidIds,
     oldItems,
