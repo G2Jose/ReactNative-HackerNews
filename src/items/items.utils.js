@@ -1,20 +1,25 @@
 import { numStoriesToDisplay } from 'common/constants';
 
-const loadingItem = {
+const placeHolderItem = {
   _loaded: false,
-  _loading: true,
+  _loading: false,
 };
 
-export const createPlaceholderItems = n =>
-  n === 1 ? loadingItem : new Array(n).fill(loadingItem);
+export const createPlaceholderItems = (n, data = {}) =>
+  n === 1
+    ? { ...placeHolderItem, ...data }
+    : new Array(n).fill(placeHolderItem);
 
 export const padWithLoadingItems = (
   arrayToPad,
   targetLength = numStoriesToDisplay
-) => [
-  ...arrayToPad,
-  ...createPlaceholderItems(targetLength - arrayToPad.length),
-];
+) =>
+  !arrayToPad || arrayToPad.length === 0
+    ? [
+        ...arrayToPad,
+        ...createPlaceholderItems(targetLength - arrayToPad.length),
+      ]
+    : arrayToPad;
 
 export const getNumItems = itemsToCount =>
   (itemsToCount && itemsToCount.length) || 0;

@@ -9,7 +9,7 @@ export const getStoriesOfType = type =>
   createSelector(idsSelector, itemsSelector, (ids, items) =>
     padWithLoadingItems(
       ids[type]
-        .map(id => items[id])
-        .map(item => item || createPlaceholderItems(1))
+        .map(id => ({ ...items[id], id }))
+        .map(item => (item.title ? item : createPlaceholderItems(1, item)))
     )
   );

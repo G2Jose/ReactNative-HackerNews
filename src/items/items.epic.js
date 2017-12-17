@@ -27,11 +27,4 @@ const fetchIdsEpic = action$ =>
     )
   );
 
-const fetchItemsForIdsEpic = action$ =>
-  action$
-    .ofType(idsFetched().type)
-    .mergeMap(action =>
-      Observable.from(action.payload.ids).map(id => fetchItem({ id }))
-    );
-
-export default combineEpics(fetchItemEpic, fetchIdsEpic, fetchItemsForIdsEpic);
+export default combineEpics(fetchItemEpic, fetchIdsEpic);
