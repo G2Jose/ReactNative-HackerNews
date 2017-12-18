@@ -1,6 +1,5 @@
 import { ajax } from 'rxjs/observable/dom/ajax';
 import { combineEpics } from 'redux-observable';
-import { Observable } from 'rxjs';
 
 import { getItemUrl, getIdsUrl } from 'common/api/urls';
 import { numStoriesToDisplay } from 'common/constants';

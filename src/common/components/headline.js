@@ -3,7 +3,6 @@ import { View, Text, StyleSheet } from 'react-native';
 
 import Separator from 'common/components/separator';
 import HeadlineLoading from 'common/components/headline.loading.ui';
-import { colors } from 'common/constants';
 
 class Headline extends React.Component {
   componentWillReceiveProps(nextProps) {
