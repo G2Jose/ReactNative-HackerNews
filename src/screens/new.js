@@ -1,10 +1,10 @@
 import React from 'react';
 import { Icon } from 'react-native-elements';
 
-import Stories from 'stories/stories';
+import Headlines from 'headlines/headlines.ui';
 import { withStoryData } from 'stories/stories.utils';
 
-const New = props => <Stories screenProps={props} />;
+const New = props => <Headlines screenProps={props} />;
 
 New.navigationOptions = {
   tabBarLabel: 'New',
