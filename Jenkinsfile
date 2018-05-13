@@ -6,9 +6,9 @@ pipeline {
 
   }
   stages {
-    stage('Test') {
+    stage('Lint') {
       steps {
-        sh 'npm run test'
+        sh 'npm run lint'
       }
     }
   }
