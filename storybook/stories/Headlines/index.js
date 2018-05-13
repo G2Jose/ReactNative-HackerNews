@@ -4,7 +4,7 @@ import { View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import CenterView from '../CenterView';
 
-import Headline from 'common/components/headline';
+import Headline from 'headlines/headline.ui';
 
 export default storiesOf('Headline', module)
   .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
