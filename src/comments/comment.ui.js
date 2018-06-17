@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import {
+  View,
+  TouchableOpacity,
+  Text,
+  StyleSheet,
+  Linking,
+} from 'react-native';
 import HTML from 'react-native-render-html';
 
 import CommentLoading from 'comments/comment.loading.ui';
@@ -71,7 +77,18 @@ class Comment extends React.Component {
       return (
         <TouchableOpacity onPress={this.handleExpand.bind(this)}>
           <View style={styles.container}>
-            {text ? <HTML html={text} /> : <Text />}
+            {text ? (
+              <HTML
+                html={text}
+                onLinkPress={(_, href) => Linking.openURL(href)}
+                baseFontStyle={{ fontSize: 14.5 }}
+                tagsStyles={{
+                  p: { marginTop: 5, marginBottom: 5 },
+                }}
+              />
+            ) : (
+              <Text />
+            )}
             <MetaRow
               numComments={numComments}
               expandSymbol={this.symbolToDisplay()}
