@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingLeft: 0,
     paddingRight: 15,
+    paddingTop: 20,
   },
   headlineContainer: {
     paddingLeft: 15,

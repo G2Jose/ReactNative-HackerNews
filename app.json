@@ -1,15 +1,4 @@
 {
-  "expo": {
-    "name": "Hacker News",
-    "slug": "rnhn",
-    "sdkVersion": "27.0.0",
-    "icon": "https://raw.githubusercontent.com/G2Jose/ReactNative-HackerNews/upgrade-rn/screenshots/logo.png",
-    "version": "3.0.0",
-    "ios": {
-      "bundleIdentifier": "com.georgejose.reactnativehackernews"
-    },
-    "android": {
-      "package": "com.georgejose.reactnativehackernews"
-    }
-  }
+  "name": "ReactNativeHackerNews",
+  "displayName": "ReactNativeHackerNews"
 }
