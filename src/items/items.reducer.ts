@@ -1,7 +1,7 @@
 import { handleActions } from 'redux-actions';
 
-import { itemFetched, fetchItem } from 'items/items.actions';
-import { headlineIdsFetched } from 'headlines/headlines.actions';
+import { itemFetched, fetchItem } from '~/items/items.actions';
+import { headlineIdsFetched } from '~/headlines/headlines.actions';
 
 export default handleActions(
   {
@@ -15,7 +15,7 @@ export default handleActions(
     [headlineIdsFetched().type](state, action) {
       const { ids } = action.payload;
       const newState = { ...state };
-      ids.forEach(idToDelete => delete newState[idToDelete]);
+      ids.forEach((idToDelete) => delete newState[idToDelete]);
       return newState;
     },
     [fetchItem().type](state, action) {

@@ -1,14 +1,14 @@
 import { ajax } from 'rxjs/observable/dom/ajax';
 import { combineEpics } from 'redux-observable';
 
-import { getItemUrl } from 'common/api/urls';
+import { getItemUrl } from '~/common/api/urls';
 
-import { fetchItem, itemFetched } from 'items/items.actions';
+import { fetchItem, itemFetched } from '~/items/items.actions';
 
-const fetchItemEpic = action$ =>
+const fetchItemEpic = (action$) =>
   action$
     .ofType(fetchItem().type)
-    .mergeMap(action =>
+    .mergeMap((action) =>
       ajax
         .getJSON(getItemUrl(action.payload.id))
         .map((item, index) => itemFetched({ item, index }))

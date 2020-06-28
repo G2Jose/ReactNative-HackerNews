@@ -3,7 +3,7 @@ import { handleActions } from 'redux-actions';
 import {
   headlineIdsFetched,
   fetchHeadlineIds,
-} from 'headlines/headlines.actions';
+} from '~/headlines/headlines.actions';
 
 export default handleActions(
   {

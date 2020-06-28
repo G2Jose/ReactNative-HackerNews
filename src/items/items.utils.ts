@@ -1,4 +1,4 @@
-import { numStoriesToDisplay } from 'common/constants';
+import { numStoriesToDisplay } from '~/common/constants';
 
 const placeHolderItem = {
   _loaded: false,
@@ -21,5 +21,5 @@ export const padWithLoadingItems = (
       ]
     : arrayToPad;
 
-export const getNumItems = itemsToCount =>
+export const getNumItems = (itemsToCount) =>
   (itemsToCount && itemsToCount.length) || 0;

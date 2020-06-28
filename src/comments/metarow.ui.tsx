@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
-import Separator from 'common/components/separator';
+import Separator from '~/common/components/separator';
 
 export default ({ numComments, expandSymbol, id, by }) => (
   <View style={styles.metaRow}>

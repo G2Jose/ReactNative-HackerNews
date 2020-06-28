@@ -2,11 +2,14 @@ import React from 'react';
 
 /* eslint-disable react/no-multi-comp */
 
-export const mapNavigationStateParamsToProps = SomeComponent => {
+export const mapNavigationStateParamsToProps = (SomeComponent) => {
   class WrappedComponent extends React.Component {
     render() {
-      const { navigation: { state: { params } } } = this.props;
-      return <SomeComponent {...params} {...this.props} />;
+      console.log('xxx', this.props);
+      const {
+        route: { params },
+      } = this.props;
+      return <SomeComponent {...params} />;
     }
   }
 
@@ -14,7 +17,7 @@ export const mapNavigationStateParamsToProps = SomeComponent => {
   return WrappedComponent;
 };
 
-export const mapScreenPropsToProps = SomeComponent => {
+export const mapScreenPropsToProps = (SomeComponent) => {
   class WrappedComponent extends React.Component {
     render() {
       const { screenProps, ...otherProps } = this.props;
@@ -25,5 +28,6 @@ export const mapScreenPropsToProps = SomeComponent => {
   WrappedComponent.navigationOptions = SomeComponent.navigationOptions;
   return WrappedComponent;
 };
+65;
 
 /* eslint-enable react/no-multi-comp */
