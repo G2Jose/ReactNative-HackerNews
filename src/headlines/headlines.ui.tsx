@@ -96,10 +96,10 @@ export default HeadlinesStack;
 const styles = StyleSheet.create({
   stories: {
     backgroundColor: '#F6F6EF',
+    paddingTop: 15,
   },
   headlineContainer: {
     paddingLeft: 15,
     paddingRight: 15,
-    paddingTop: 15,
   },
 });
