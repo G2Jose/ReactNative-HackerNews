@@ -3,7 +3,13 @@ import { View, StyleSheet, Text } from 'react-native';
 
 import Separator from '~/common/components/separator';
 
-export default ({ numComments, expandSymbol, id, by }) => (
+type Props = {
+  numComments: number;
+  expandSymbol: string;
+  id: string;
+  by: string;
+};
+export default ({ numComments, expandSymbol, id, by }: Props) => (
   <View style={styles.metaRow}>
     {numComments > 0 && [
       <Text style={styles.metaText} key={`symbol-key-${id}`}>

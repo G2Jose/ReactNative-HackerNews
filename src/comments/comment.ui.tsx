@@ -12,11 +12,15 @@ import CommentLoading from '~/comments/comment.loading.ui';
 import MetaRow from '~/comments/metarow.ui';
 import { getNumItems } from '~/items/items.utils';
 import { recursivelyCheckIfKidsChanged } from '~/comments/comment.utils';
+import { ApiItem, ItemMap } from '~/types';
 
-// const HTML = () => null;
-
-class Comment extends React.Component {
-  constructor(props) {
+type Props = ApiItem & {
+  fetchComment: (id: string) => void;
+  items: ItemMap;
+};
+type State = { expanded?: boolean };
+class Comment extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = { expanded: false };
   }
@@ -28,7 +32,7 @@ class Comment extends React.Component {
     }
   }
 
-  shouldComponentUpdate(newProps, newState) {
+  shouldComponentUpdate(newProps: Props, newState: State) {
     const oldProps = this.props;
     const oldState = this.state;
     if (

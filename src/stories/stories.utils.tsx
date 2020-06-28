@@ -5,7 +5,10 @@ import { fetchItem } from '~/items/items.actions';
 import { fetchHeadlineIds } from '~/headlines/headlines.actions';
 import { getStoriesOfType } from '~/stories/stories.selectors';
 
-export const withStoryData = (Component, type = 'top') => {
+export const withStoryData = (
+  Component: React.ComponentType<{}>,
+  type = 'top'
+) => {
   const WithStoryData = (props) => <Component {...props} />;
 
   const mapStateToProps = (state) => ({
@@ -16,12 +19,10 @@ export const withStoryData = (Component, type = 'top') => {
     fetchHeadlineIds: () => {
       dispatch(fetchHeadlineIds({ type }));
     },
-    fetchItemForId: (id) => {
+    fetchItemForId: (id: string) => {
       dispatch(fetchItem({ id }));
     },
   });
-
-  WithStoryData.navigationOptions = Component.navigationOptions;
 
   return connect(mapStateToProps, mapDispatchToProps)(WithStoryData);
 };

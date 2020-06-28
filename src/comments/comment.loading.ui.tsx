@@ -4,8 +4,12 @@ import { View, StyleSheet, Animated, Easing } from 'react-native';
 import Separator from '~/common/components/separator';
 import { colors } from '~/common/constants';
 
-class CommentLoading extends React.Component {
-  constructor(props) {
+type CommentLoadingProps = {};
+type State = {
+  fadeAnim: Animated.Value;
+};
+class CommentLoading extends React.Component<CommentLoadingProps, State> {
+  constructor(props: CommentLoadingProps) {
     super(props);
     this.state = { fadeAnim: new Animated.Value(0.5) };
   }
@@ -18,7 +22,7 @@ class CommentLoading extends React.Component {
     Animated.timing(this.state.fadeAnim, {
       toValue: 1,
       duration: 1500,
-      easing: Easing.back(),
+      easing: Easing.back(0),
       useNativeDriver: true,
     }).start(() => {
       this.setState({ fadeAnim: new Animated.Value(0.5) }, () =>

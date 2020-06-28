@@ -3,8 +3,13 @@ import { View, Text, StyleSheet } from 'react-native';
 
 import Separator from '~/common/components/separator';
 import HeadlineLoading from '~/headlines/headline.loading.ui';
+import { ApiItem } from '~/types';
 
-class Headline extends React.Component {
+type Props = ApiItem & {
+  fetchItemForId: (id: string) => void;
+  isViewable?: boolean;
+};
+class Headline extends React.Component<Props> {
   componentDidUpdate() {
     const { id, fetchItemForId, _loading, _loaded, isViewable } = this.props;
     if (id && fetchItemForId && !_loading && !_loaded && isViewable) {

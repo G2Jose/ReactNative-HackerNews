@@ -4,8 +4,10 @@ import Separator from '~/common/components/separator';
 
 import { colors } from '~/common/constants';
 
-class HeadlineLoading extends React.Component {
-  constructor(props) {
+type Props = {};
+type State = { fadeAnim: Animated.Value };
+class HeadlineLoading extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = { fadeAnim: new Animated.Value(0.5) };
   }
@@ -14,7 +16,7 @@ class HeadlineLoading extends React.Component {
     Animated.timing(this.state.fadeAnim, {
       toValue: 1,
       duration: 1500,
-      easing: Easing.back(),
+      easing: Easing.back(0),
       useNativeDriver: true,
     }).start(() => {
       this.setState({ fadeAnim: new Animated.Value(0.5) }, () =>
