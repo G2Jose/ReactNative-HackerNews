@@ -15,15 +15,9 @@
     "tag": "v0.62.2"
   },
   "source_files": "**/*.{h,m}",
-  "preserve_paths": [
-    "package.json",
-    "LICENSE",
-    "LICENSE-docs"
-  ],
+  "preserve_paths": ["package.json", "LICENSE", "LICENSE-docs"],
   "header_dir": "RCTText",
   "dependencies": {
-    "React-Core/RCTTextHeaders": [
-      "0.62.2"
-    ]
+    "React-Core/RCTTextHeaders": ["0.62.2"]
   }
 }

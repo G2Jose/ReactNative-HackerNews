@@ -7,7 +7,7 @@ import CenterView from '../CenterView';
 import Comment from 'comments/comment.ui';
 
 export default storiesOf('Comment', module)
-  .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
+  .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('loading', () => <Comment _loading />)
   .add('short content', () => (
     <View>

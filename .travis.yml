@@ -1,9 +1,9 @@
 before_install:
-- git clone https://github.com/G2Jose/ReactNative-HackerNews.git
+  - git clone https://github.com/G2Jose/ReactNative-HackerNews.git
 
 install:
-- yarn
+  - yarn
 
 script:
-- yarn lint
-- yarn test:ci
+  - yarn lint
+  - yarn test:ci

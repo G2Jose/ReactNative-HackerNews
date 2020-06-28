@@ -19,8 +19,6 @@
   "resources": "Fonts/*.ttf",
   "preserve_paths": "**/*.js",
   "dependencies": {
-    "React": [
-
-    ]
+    "React": []
   }
 }

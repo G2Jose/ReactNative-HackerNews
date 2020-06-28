@@ -1,5 +1,4 @@
-Folly: Facebook Open-source Library
------------------------------------
+## Folly: Facebook Open-source Library
 
 [![Build Status](https://travis-ci.org/facebook/folly.svg?branch=master)](https://travis-ci.org/facebook/folly)
 
@@ -30,9 +29,8 @@ dependencies, meaning that a given folly module may use any other
 folly components.
 
 All symbols are defined in the top-level namespace `folly`, except of
-course macros. Macro names are ALL_UPPERCASE and should be prefixed
-with `FOLLY_`. Namespace `folly` defines other internal namespaces
-such as `internal` or `detail`. User code should not depend on symbols
+course macros. Macro names are ALL*UPPERCASE and should be prefixed
+with `FOLLY*`. Namespace`folly`defines other internal namespaces such as`internal`or`detail`. User code should not depend on symbols
 in those namespaces.
 
 Folly has an `experimental` directory as well. This designation connotes
@@ -74,7 +72,7 @@ Folly is published on GitHub at https://github.com/facebook/folly
 
 folly requires gcc 5.1+ and a version of boost compiled with C++14 support.
 
-googletest is required to build and run folly's tests.  You can download
+googletest is required to build and run folly's tests. You can download
 it from https://github.com/google/googletest/archive/release-1.8.0.tar.gz
 The following commands can be used to download and install it:
 
@@ -93,7 +91,7 @@ make install
 If you have boost, gtest, or other dependencies installed in a non-default
 location, you can use the `CMAKE_INCLUDE_PATH` and `CMAKE_LIBRARY_PATH`
 variables to make CMAKE look also look for header files and libraries in
-non-standard locations.  For example, to also search the directories
+non-standard locations. For example, to also search the directories
 `/alt/include/path1` and `/alt/include/path2` for header files and the
 directories `/alt/lib/path1` and `/alt/lib/path2` for libraries, you can invoke
 `cmake` as follows:
@@ -159,6 +157,7 @@ sudo apt-get install \
 ```
 
 In the folly directory (e.g. the checkout root or the archive unpack root), run:
+
 ```
   mkdir _build && cd _build
   cmake ..
@@ -244,24 +243,26 @@ You may also use `vcpkg install folly:x64-windows --head` to build against `mast
 - additional platform specific dependencies:
 
   Fedora >= 21 64-bit (last tested on Fedora 28 64-bit)
-    - gcc
-    - gcc-c++
-    - cmake
-    - automake
-    - boost-devel
-    - libtool
-    - lz4-devel
-    - lzma-devel
-    - snappy-devel
-    - zlib-devel
-    - glog-devel
-    - gflags-devel
-    - scons
-    - double-conversion-devel
-    - openssl-devel
-    - libevent-devel
+
+  - gcc
+  - gcc-c++
+  - cmake
+  - automake
+  - boost-devel
+  - libtool
+  - lz4-devel
+  - lzma-devel
+  - snappy-devel
+  - zlib-devel
+  - glog-devel
+  - gflags-devel
+  - scons
+  - double-conversion-devel
+  - openssl-devel
+  - libevent-devel
 
   Optional
-    - libdwarf-dev
-    - libelf-dev
-    - libunwind8-dev
+
+  - libdwarf-dev
+  - libelf-dev
+  - libunwind8-dev

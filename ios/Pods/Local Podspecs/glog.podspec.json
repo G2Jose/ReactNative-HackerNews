@@ -25,10 +25,7 @@
     "src/utilities.cc",
     "src/vlog_is_on.cc"
   ],
-  "preserve_paths": [
-    "src/*.h",
-    "src/base/*.h"
-  ],
+  "preserve_paths": ["src/*.h", "src/base/*.h"],
   "exclude_files": "src/windows/**/*",
   "libraries": "stdc++",
   "compiler_flags": "-Wno-shorten-64-to-32",

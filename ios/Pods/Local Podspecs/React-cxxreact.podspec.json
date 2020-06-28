@@ -21,20 +21,10 @@
   },
   "header_dir": "cxxreact",
   "dependencies": {
-    "boost-for-react-native": [
-      "1.63.0"
-    ],
-    "DoubleConversion": [
-
-    ],
-    "Folly": [
-      "2018.10.22.00"
-    ],
-    "glog": [
-
-    ],
-    "React-jsinspector": [
-      "0.62.2"
-    ]
+    "boost-for-react-native": ["1.63.0"],
+    "DoubleConversion": [],
+    "Folly": ["2018.10.22.00"],
+    "glog": [],
+    "React-jsinspector": ["0.62.2"]
   }
 }

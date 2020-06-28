@@ -16,11 +16,7 @@
     "tag": "v0.62.2"
   },
   "source_files": "*.{m,mm}",
-  "preserve_paths": [
-    "package.json",
-    "LICENSE",
-    "LICENSE-docs"
-  ],
+  "preserve_paths": ["package.json", "LICENSE", "LICENSE-docs"],
   "header_dir": "RCTLinking",
   "pod_target_xcconfig": {
     "USE_HEADERMAP": "YES",
@@ -28,14 +24,8 @@
     "HEADER_SEARCH_PATHS": "\"$(PODS_ROOT)/Folly\""
   },
   "dependencies": {
-    "FBReactNativeSpec": [
-      "0.62.2"
-    ],
-    "React-Core/RCTLinkingHeaders": [
-      "0.62.2"
-    ],
-    "ReactCommon/turbomodule/core": [
-      "0.62.2"
-    ]
+    "FBReactNativeSpec": ["0.62.2"],
+    "React-Core/RCTLinkingHeaders": ["0.62.2"],
+    "ReactCommon/turbomodule/core": ["0.62.2"]
   }
 }

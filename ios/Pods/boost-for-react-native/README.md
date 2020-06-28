@@ -13,7 +13,6 @@ Run this command to get a .tar.gz file and upload it to Releases.
 tar -cvzf boost_1_57_0.tar.gz boost_1_57_0/
 ```
 
-
 ## License
 
 The Boost Software License 1.0 is included with this repository and its releases.
