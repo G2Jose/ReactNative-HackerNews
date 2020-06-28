@@ -8,15 +8,9 @@ import {
 } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { connect } from 'react-redux';
 import Headline from '~/headlines/headline.ui';
 import Story from '~/stories/story.ui';
-import {
-  mapScreenPropsToProps,
-  mapNavigationStateParamsToProps,
-} from '~/common/navigation';
 import { withStoryData } from '~/stories/stories.utils';
-import { fetchHeadlineIds } from '~/headlines/headlines.actions';
 
 class HeadlinesBase extends React.Component {
   constructor(props) {
@@ -88,7 +82,7 @@ class HeadlinesBase extends React.Component {
 const Headlines = withStoryData(HeadlinesBase);
 const Stack = createStackNavigator();
 
-const HeadlinesStack = (props) => {
+const HeadlinesStack = () => {
   return (
     <Stack.Navigator headerMode="none">
       <Stack.Screen name="Home" component={Headlines} />

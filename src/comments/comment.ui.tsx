@@ -66,7 +66,8 @@ class Comment extends React.Component {
 
   handleExpand() {
     const numComments = getNumItems(this.props.kids);
-    if (numComments > 0) this.setState({ expanded: !this.state.expanded });
+    if (numComments > 0)
+      this.setState((previousState) => ({ expanded: !previousState.expanded }));
   }
 
   render() {
