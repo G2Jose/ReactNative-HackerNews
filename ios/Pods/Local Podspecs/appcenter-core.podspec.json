@@ -1,0 +1,29 @@
+{
+  "name": "appcenter-core",
+  "version": "3.0.3",
+  "summary": "Node module that contains common functionality needed to appcenter-* modules",
+  "license": "MIT",
+  "homepage": "https://github.com/Microsoft/appcenter-sdk-react-native/blob/master/appcenter/README.md",
+  "documentation_url": "https://docs.microsoft.com/en-us/appcenter/",
+  "authors": {
+    "Microsoft": "appcentersdk@microsoft.com"
+  },
+  "source": {
+    "git": "https://github.com/microsoft/appcenter-sdk-react-native.git"
+  },
+  "source_files": "AppCenterReactNative/**/*.{h,m}",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "requires_arc": true,
+  "vendored_frameworks": "AppCenterReactNativeShared/AppCenterReactNativeShared.framework",
+  "dependencies": {
+    "AppCenterReactNativeShared": [
+
+    ],
+    "React": [
+
+    ]
+  },
+  "static_framework": true
+}

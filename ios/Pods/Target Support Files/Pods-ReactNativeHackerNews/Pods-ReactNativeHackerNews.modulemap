@@ -1,0 +1,6 @@
+module Pods_ReactNativeHackerNews {
+  umbrella header "Pods-ReactNativeHackerNews-umbrella.h"
+
+  export *
+  module * { export * }
+}
