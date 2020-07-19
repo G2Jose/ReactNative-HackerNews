@@ -28,7 +28,7 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.0",
     "install": "^0.13.0",
-    "npm": "^6.14.5",
+    "npm": "^6.14.6",
     "react": "16.11.0",
     "react-native": "0.62.2",
     "react-native-code-push": "^6.2.1",
