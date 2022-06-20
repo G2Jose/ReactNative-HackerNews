@@ -1,8 +1,0 @@
-{
-  "compilerOptions": {
-    "target": "ES6",
-    "baseUrl": "./src/",
-    "module": "es6"
-  },
-  "exclude": ["bin", "build"]
-}
