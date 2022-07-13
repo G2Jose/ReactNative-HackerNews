@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   backButtonText: {
     ...rootStyles.text,
   },
-  backButton: { marginHorizontal: 2, marginVertical: 4 },
+  backButton: { marginHorizontal: 2, marginVertical: 4, ...rootStyles.text },
   headline: {
     marginHorizontal: 8,
   },
