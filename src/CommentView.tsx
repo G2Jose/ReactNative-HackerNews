@@ -56,7 +56,7 @@ export const CommentView = ({ id }: { id: number }) => {
 }
 
 const styles = StyleSheet.create({
-  html: { ...rootStyles.text, fontSize: 14, color: '#CCCAC2' },
+  html: { ...rootStyles.text, fontSize: 14, color: 'white' },
   commentContainer: {
     borderBottomColor: '#45484E' || '#181B24',
     borderBottomWidth: StyleSheet.hairlineWidth,

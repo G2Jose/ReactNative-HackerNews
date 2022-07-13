@@ -7,6 +7,7 @@ import {
   StyleSheet,
   ViewStyle,
   StyleProp,
+  SafeAreaView,
 } from 'react-native'
 import { useItem } from './useItem'
 import { CommentView } from './CommentView'
@@ -32,29 +33,34 @@ export const StoryView = ({
 
   return (
     <View style={[styles.rootView, style]}>
-      <ScrollView>
-        <TouchableOpacity
-          style={styles.backButton}
-          onPress={() => onPressBack(undefined)}>
-          <Text style={styles.backButton}>{'< Back'}</Text>
-        </TouchableOpacity>
-        <HeadlineView
-          id={id}
-          style={styles.headline}
-          onPressBehavior="open-url"
-        />
+      <SafeAreaView style={styles.safeAreaView}>
+        <ScrollView>
+          <TouchableOpacity
+            style={styles.backButton}
+            onPress={() => onPressBack(undefined)}>
+            <Text style={styles.backButton}>{'< Back'}</Text>
+          </TouchableOpacity>
+          <HeadlineView
+            id={id}
+            style={styles.headline}
+            onPressBehavior="open-url"
+          />
 
-        <View style={styles.commentContainer}>
-          {headline?.kids?.map(id => (
-            <CommentView id={id} />
-          ))}
-        </View>
-      </ScrollView>
+          <View style={styles.commentContainer}>
+            {headline?.kids?.map(id => (
+              <CommentView id={id} />
+            ))}
+          </View>
+        </ScrollView>
+      </SafeAreaView>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
+  safeAreaView: {
+    ...rootStyles.background,
+  },
   rootView: {
     ...rootStyles.background,
     flex: 1,
@@ -66,5 +72,5 @@ const styles = StyleSheet.create({
   headline: {
     marginHorizontal: 8,
   },
-  commentContainer: { paddingHorizontal: 8 * 2, paddingVertical: 4 },
+  commentContainer: { paddingHorizontal: 2 * 4, paddingVertical: 4 },
 })

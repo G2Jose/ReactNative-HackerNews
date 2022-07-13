@@ -61,9 +61,6 @@ export const TopHeadlines = ({
         )
       }}
       keyExtractor={item => `${item}`}
-      refreshControl={
-        <RefreshControl refreshing={true} onRefresh={undefined} />
-      }
       windowSize={50}
     />
   )
