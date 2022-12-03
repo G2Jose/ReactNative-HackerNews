@@ -1,6 +1,6 @@
 # CocoaAsyncSocket
-[![Build Status](https://travis-ci.org/robbiehanson/CocoaAsyncSocket.svg?branch=master)](https://travis-ci.org/robbiehanson/CocoaAsyncSocket) [![Version Status](https://img.shields.io/cocoapods/v/CocoaAsyncSocket.svg?style=flat)](http://cocoadocs.org/docsets/CocoaAsyncSocket) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Platform](http://img.shields.io/cocoapods/p/CocoaAsyncSocket.svg?style=flat)](http://cocoapods.org/?q=CocoaAsyncSocket) [![license Public Domain](https://img.shields.io/badge/license-Public%20Domain-orange.svg?style=flat)](https://en.wikipedia.org/wiki/Public_domain)
 
+[![Build Status](https://travis-ci.org/robbiehanson/CocoaAsyncSocket.svg?branch=master)](https://travis-ci.org/robbiehanson/CocoaAsyncSocket) [![Version Status](https://img.shields.io/cocoapods/v/CocoaAsyncSocket.svg?style=flat)](http://cocoadocs.org/docsets/CocoaAsyncSocket) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Platform](http://img.shields.io/cocoapods/p/CocoaAsyncSocket.svg?style=flat)](http://cocoapods.org/?q=CocoaAsyncSocket) [![license Public Domain](https://img.shields.io/badge/license-Public%20Domain-orange.svg?style=flat)](https://en.wikipedia.org/wiki/Public_domain)
 
 CocoaAsyncSocket provides easy-to-use and powerful asynchronous socket libraries for macOS, iOS, and tvOS. The classes are described below.
 
@@ -10,10 +10,10 @@ CocoaAsyncSocket provides easy-to-use and powerful asynchronous socket libraries
 
 Install using [CocoaPods](https://cocoapods.org) by adding this line to your Podfile:
 
-````ruby
+```ruby
 use_frameworks! # Add this if you are targeting iOS 8+ or using Swift
-pod 'CocoaAsyncSocket'  
-````
+pod 'CocoaAsyncSocket'
+```
 
 #### Carthage
 
@@ -23,17 +23,18 @@ CocoaAsyncSocket is [Carthage](https://github.com/Carthage/Carthage) compatible.
 github "robbiehanson/CocoaAsyncSocket" "master"
 ```
 
-The project is currently configured to build for **iOS**, **tvOS** and **Mac**.  After building with carthage the resultant frameworks will be stored in:
+The project is currently configured to build for **iOS**, **tvOS** and **Mac**. After building with carthage the resultant frameworks will be stored in:
 
-* `Carthage/Build/iOS/CocoaAsyncSocket.framework`
-* `Carthage/Build/tvOS/CocoaAsyncSocket.framework`
-* `Carthage/Build/Mac/CocoaAsyncSocket.framework`
+- `Carthage/Build/iOS/CocoaAsyncSocket.framework`
+- `Carthage/Build/tvOS/CocoaAsyncSocket.framework`
+- `Carthage/Build/Mac/CocoaAsyncSocket.framework`
 
 Select the correct framework(s) and drag it into your project.
 
 #### Swift Package Manager
 
 Simply add the package dependency to your Package.swift and depend on "CocoaAsyncSocket" in the necessary targets:
+
 ```swift
 dependencies: [
     .package(url: "https://github.com/robbiehanson/CocoaAsyncSocket", from: "7.6.4")
@@ -50,7 +51,7 @@ Using Objective-C:
 
 ```obj-c
 // When using Clang Modules:
-@import CocoaAsyncSocket; 
+@import CocoaAsyncSocket;
 
 // or when not:
 #import "GCDAsyncSocket.h" // for TCP
@@ -107,15 +108,15 @@ import CocoaAsyncSocket
 - Fully GCD based and Thread-Safe<br/>
   _It runs entirely within its own GCD dispatch_queue, and is completely thread-safe. Further, the delegate methods are all invoked asynchronously onto a dispatch_queue of your choosing. This means parallel operation of your socket code, and your delegate/processing code._
 
-***
+---
 
 For those new(ish) to networking, it's recommended you **[read the wiki](https://github.com/robbiehanson/CocoaAsyncSocket/wiki)**.<br/>_Sockets might not work exactly like you think they do..._
 
 **Still got questions?** Try the **[CocoaAsyncSocket Mailing List](https://groups.google.com/group/cocoaasyncsocket)**.
-***
+
+---
 
 Love the project? Wanna buy me a ☕️&nbsp;&nbsp;? (or a 🍺&nbsp;&nbsp;😀&nbsp;):
 
 [![donation-bitcoin](https://bitpay.com/img/donate-sm.png)](https://onename.com/robbiehanson)
 [![donation-paypal](https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2M8C699FQ8AW2)
-

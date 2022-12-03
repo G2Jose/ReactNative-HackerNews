@@ -7,7 +7,7 @@ import CenterView from '../CenterView';
 import Headline from 'headlines/headline.ui';
 
 export default storiesOf('Headline', module)
-  .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
+  .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('loading', () => <Headline _loading />)
   .add('short content', () => (
     <View>

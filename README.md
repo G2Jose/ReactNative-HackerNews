@@ -21,24 +21,24 @@ A modern cross-platform HackerNews client built on React Native
 
 The app currently has the following functionality:
 
-* Headlines - Top, New, Show, Ask, Jobs
-* Touching a headline takes you to a comments view
-* Lazy loading data, loading views
-* Pull to refresh
+- Headlines - Top, New, Show, Ask, Jobs
+- Touching a headline takes you to a comments view
+- Lazy loading data, loading views
+- Pull to refresh
 
 ## Technologies Used
 
-* React Native
-* Redux for state management
-* Redux Observable, RxJS for side effects handling
-* Reselect for memoized selectors
-* [HackerNews API](https://github.com/HackerNews/API)
+- React Native
+- Redux for state management
+- Redux Observable, RxJS for side effects handling
+- Reselect for memoized selectors
+- [HackerNews API](https://github.com/HackerNews/API)
 
 ## Dev Tooling
 
-* Eslint for linting
-* Prettier, lint-staged for code formatting
-* React [storybook](https://github.com/storybooks/storybook) for UI development & testing
+- Eslint for linting
+- Prettier, lint-staged for code formatting
+- React [storybook](https://github.com/storybooks/storybook) for UI development & testing
 
 ## How to run
 
@@ -57,7 +57,7 @@ The app currently has the following functionality:
 
 ## UI development / testing using storybook
 
-* After installing dependencies by running `yarn`,
+- After installing dependencies by running `yarn`,
 
   ```
   yarn storybook:ios

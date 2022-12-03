@@ -15,8 +15,6 @@
   },
   "source_files": "apple/**/*.{h,m}",
   "dependencies": {
-    "React": [
-
-    ]
+    "React": []
   }
 }

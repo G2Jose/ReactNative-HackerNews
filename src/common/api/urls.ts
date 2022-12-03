@@ -7,8 +7,8 @@ export const showStoriesUrl =
 export const newStoriesUrl =
   'https://hacker-news.firebaseio.com/v0/newstories.json';
 
-export const getItemUrl = id =>
+export const getItemUrl = (id) =>
   `https://hacker-news.firebaseio.com/v0/item/${id}.json`;
 
-export const getIdsUrl = type =>
+export const getIdsUrl = (type) =>
   `https://hacker-news.firebaseio.com/v0/${type}stories.json`;

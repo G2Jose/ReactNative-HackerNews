@@ -26,44 +26,22 @@
       "name": "callinvoker",
       "source_files": "callinvoker/**/*.{cpp,h}",
       "dependencies": {
-        "React-cxxreact": [
-          "0.62.2"
-        ],
-        "DoubleConversion": [
-
-        ],
-        "Folly": [
-          "2018.10.22.00"
-        ],
-        "glog": [
-
-        ]
+        "React-cxxreact": ["0.62.2"],
+        "DoubleConversion": [],
+        "Folly": ["2018.10.22.00"],
+        "glog": []
       }
     },
     {
       "name": "turbomodule",
       "dependencies": {
-        "ReactCommon/callinvoker": [
-          "0.62.2"
-        ],
-        "React-Core": [
-          "0.62.2"
-        ],
-        "React-cxxreact": [
-          "0.62.2"
-        ],
-        "React-jsi": [
-          "0.62.2"
-        ],
-        "Folly": [
-          "2018.10.22.00"
-        ],
-        "DoubleConversion": [
-
-        ],
-        "glog": [
-
-        ]
+        "ReactCommon/callinvoker": ["0.62.2"],
+        "React-Core": ["0.62.2"],
+        "React-cxxreact": ["0.62.2"],
+        "React-jsi": ["0.62.2"],
+        "Folly": ["2018.10.22.00"],
+        "DoubleConversion": [],
+        "glog": []
       },
       "subspecs": [
         {
@@ -80,9 +58,7 @@
             "turbomodule/samples/platform/ios/*.{mm,cpp,h}"
           ],
           "dependencies": {
-            "ReactCommon/turbomodule/core": [
-              "0.62.2"
-            ]
+            "ReactCommon/turbomodule/core": ["0.62.2"]
           }
         }
       ]

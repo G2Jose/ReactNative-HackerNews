@@ -20,20 +20,10 @@
   },
   "header_dir": "jsireact",
   "dependencies": {
-    "React-cxxreact": [
-      "0.62.2"
-    ],
-    "React-jsi": [
-      "0.62.2"
-    ],
-    "Folly": [
-      "2018.10.22.00"
-    ],
-    "DoubleConversion": [
-
-    ],
-    "glog": [
-
-    ]
+    "React-cxxreact": ["0.62.2"],
+    "React-jsi": ["0.62.2"],
+    "Folly": ["2018.10.22.00"],
+    "DoubleConversion": [],
+    "glog": []
   }
 }

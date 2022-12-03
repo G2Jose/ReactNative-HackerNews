@@ -38,15 +38,15 @@ Both Flipper's desktop app and native mobile SDKs are open-source and MIT licens
 
 This repository includes all parts of Flipper. This includes:
 
-* Flipper's desktop app built using [Electron](https://electronjs.org) (`/src`)
-* native Flipper SDKs for iOS (`/iOS`)
-* native Flipper SDKs for Android (`/android`)
-* Plugins:
-  * Logs (`/src/device-plugins/logs`)
-  * Layout inspector (`/src/plugins/layout`)
-  * Network inspector (`/src/plugins/network`)
-  * Shared Preferences/NSUserDefaults inspector (`/src/plugins/shared_preferences`)
-* website and documentation (`/website` / `/docs`)
+- Flipper's desktop app built using [Electron](https://electronjs.org) (`/src`)
+- native Flipper SDKs for iOS (`/iOS`)
+- native Flipper SDKs for Android (`/android`)
+- Plugins:
+  - Logs (`/src/device-plugins/logs`)
+  - Layout inspector (`/src/plugins/layout`)
+  - Network inspector (`/src/plugins/network`)
+  - Shared Preferences/NSUserDefaults inspector (`/src/plugins/shared_preferences`)
+- website and documentation (`/website` / `/docs`)
 
 # Getting started
 
@@ -54,14 +54,15 @@ Please refer to our [Getting Started guide](https://fbflipper.com/docs/getting-s
 
 ## Requirements
 
-* node >= 8
-* yarn >= 1.5
-* iOS developer tools (for developing iOS plugins)
-* Android SDK and adb
+- node >= 8
+- yarn >= 1.5
+- iOS developer tools (for developing iOS plugins)
+- Android SDK and adb
 
 # Building from Source
 
 ## Desktop
+
 ### Running from source
 
 ```
@@ -99,6 +100,7 @@ You can omit `--repo-update` to speed up the installation, but watch out as you 
 ## Android SDK + Sample app
 
 Start up an android emulator and run the following in the project root:
+
 ```
 ./gradlew :sample:installDebug
 ```
@@ -133,7 +135,9 @@ yarn start
 ```
 
 ## Contributing
+
 See the [CONTRIBUTING](/CONTRIBUTING.md) file for how to help out.
 
 ## License
+
 Flipper is MIT licensed, as found in the [LICENSE](/LICENSE) file.
