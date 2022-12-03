@@ -24,6 +24,8 @@ module.exports = {
     },
   },
   rules: {
+    'react/no-unescaped-entities': 0,
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'no-console': [
       'warn',
       {
