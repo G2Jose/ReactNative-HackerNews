@@ -1,11 +1,31 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableHighlight, Button } from 'react-native';
 
-import Comment from './comment.js';
+import Comment, { LoadingComment } from './comment.js';
 import Card from './card.js';
 
-const Comments = ({item}) => {
-	if (item && item.comments) {
+const LoadingComments = () => {
+	return (
+		<View>
+			<LoadingComment />
+			<LoadingComment />
+			<LoadingComment />
+			<LoadingComment />
+			<LoadingComment />
+			<LoadingComment />
+			<LoadingComment />
+			<LoadingComment />
+			<LoadingComment />
+			<LoadingComment />
+			<LoadingComment />
+		</View>
+	);
+}
+
+const Comments = ({item, loading}) => {
+	if (loading)
+		return <LoadingComments />;
+	else if (item && item.comments) {
 		return (
 			<View>
 				{item.comments.map((comment, i) => {
@@ -13,9 +33,8 @@ const Comments = ({item}) => {
 				})}
 			</View>
 		)
-	} else {
-		return <Text>Loading...</Text>
 	}
+	return <LoadingComments />;
 }
 
 export default Comments;

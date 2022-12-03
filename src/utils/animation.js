@@ -21,6 +21,7 @@ const loadingParams = {
 	maxOpacity: 0.7,
 	iterationDuration: 500,
 	totalDuration: 2000,
+	commentLoadDuration: 1000,
 };
 
 export {

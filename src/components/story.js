@@ -6,6 +6,7 @@ import Card from './card.js';
 import ScrollView from './scrollView.js';
 import Comments from './comments.js';
 
+import {loadingParams} from '../utils/animation.js';
 import { navigationOptions } from '../utils/navigation.js';
 import hnapi from '../utils/api.js';
 
@@ -16,7 +17,7 @@ class Story extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			refreshing: false,
+			refreshing: true,
 		};
 	}
 
@@ -36,16 +37,14 @@ class Story extends React.Component {
 
 	componentDidMount() {
 		const { id } = this.props.navigation.state.params;
-		this._updateStory(id);
+		this._updateStory(id, setTimeout(() => this.setState({refreshing: false}), loadingParams.commentLoadDuration));
 	}
 
 	_onRefresh = (id) => {
 		this.setState({
 			refreshing: true,
 		});
-		this._updateStory(id, () => {
-			this.setState({refreshing: false});
-		});
+		this._updateStory(id, setTimeout(() => this.setState({refreshing: false}), loadingParams.commentLoadDuration));
 	}
 
 	render() {
@@ -73,7 +72,7 @@ class Story extends React.Component {
 						</Text>
 					</View>
 				</Card>
-				<Comments item={story && story.content && story.content.data} />
+				<Comments loading={this.state.refreshing} item={story && story.content && story.content.data} />
 			</ScrollView>
 		);
 	}
