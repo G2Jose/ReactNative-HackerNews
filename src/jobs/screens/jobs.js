@@ -4,9 +4,7 @@ import { Icon } from 'react-native-elements';
 import Stories from 'stories/stories';
 import { withStoryData } from 'stories/stories.utils';
 
-const Jobs = ({ stories, fetchStories }) => (
-  <Stories screenProps={{ stories, fetchStories }} />
-);
+const Jobs = props => <Stories screenProps={props} />;
 
 Jobs.navigationOptions = {
   tabBarLabel: 'Jobs',

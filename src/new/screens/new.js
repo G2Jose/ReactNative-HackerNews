@@ -4,9 +4,7 @@ import { Icon } from 'react-native-elements';
 import Stories from 'stories/stories';
 import { withStoryData } from 'stories/stories.utils';
 
-const New = ({ stories, fetchStories }) => (
-  <Stories screenProps={{ stories, fetchStories }} />
-);
+const New = props => <Stories screenProps={props} />;
 
 New.navigationOptions = {
   tabBarLabel: 'New',

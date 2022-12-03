@@ -18,7 +18,7 @@ import {
 class Headlines extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { refreshing: false };
+    this.state = { refreshing: false, viewableItems: new Set() };
     this._onRefresh = this._onRefresh.bind(this);
   }
   componentDidMount() {
@@ -33,7 +33,7 @@ class Headlines extends React.Component {
 
   render() {
     const {
-      props: { navigation: { navigate }, stories },
+      props: { navigation: { navigate }, stories, fetchItemForId },
       state: { refreshing },
       _onRefresh,
     } = this;
@@ -44,16 +44,25 @@ class Headlines extends React.Component {
             <RefreshControl refreshing={refreshing} onRefresh={_onRefresh} />
           }
           data={stories}
-          renderItem={({ item }) => (
+          renderItem={({ item, index }) => (
             <View style={styles.headlineContainer}>
               <TouchableOpacity
                 onPress={() => navigate('Details', { story: item })}
               >
-                <Headline {...item} />
+                <Headline
+                  {...item}
+                  isViewable={this.state.viewableItems.has(index)}
+                  fetchItemForId={fetchItemForId}
+                />
               </TouchableOpacity>
             </View>
           )}
           keyExtractor={(item, index) => index}
+          onViewableItemsChanged={({ viewableItems }) => {
+            this.setState({
+              viewableItems: new Set(viewableItems.map(item => item.index)),
+            });
+          }}
         />
       </View>
     );

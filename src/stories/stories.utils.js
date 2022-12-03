@@ -2,12 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { fetchIds } from 'stories/stories.actions';
+import { fetchItem } from 'items/items.actions';
 import { getStoriesOfType } from 'stories/stories.selectors';
 
 export const withStoryData = (Component, type = 'top') => {
-  const WithStoryData = ({ fetchStories, stories, ...rest }) => (
-    <Component stories={stories} fetchStories={fetchStories} {...rest} />
-  );
+  const WithStoryData = props => <Component {...props} />;
 
   const mapStateToProps = state => ({
     stories: getStoriesOfType(type)(state),
@@ -16,6 +15,9 @@ export const withStoryData = (Component, type = 'top') => {
   const mapDispatchToProps = dispatch => ({
     fetchStories: () => {
       dispatch(fetchIds({ type }));
+    },
+    fetchItemForId: id => {
+      dispatch(fetchItem({ id }));
     },
   });
 
