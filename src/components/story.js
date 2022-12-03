@@ -60,7 +60,10 @@ class Story extends React.Component {
 				}
 			>
 				<Card>
-					<View style={styles.titleContainer}>
+					<View style={styles.pointsContainer}>
+						<Text style={styles.points}>{story.points || '0'}</Text>
+					</View>
+					<View style={styles.content}>
 						<Text style={styles.titleText}>
 							{story.title}
 						</Text>
@@ -68,8 +71,13 @@ class Story extends React.Component {
 							style={styles.link}
 							onPress={() => Linking.openURL(story.url)}
 						>
-							{`↗️${story.url}`}
+							{story.url}
 						</Text>
+						<View style={styles.info}>
+							<View style={styles.infoContainer}><Text style={styles.infoText}>{story.timeAgo}</Text></View>
+							<View style={styles.infoContainer}><Text style={styles.infoText}>{`${story.commentCount} comments`}</Text></View>
+							<View style={styles.infoContainer}><Text style={styles.infoText}>{story.author}</Text></View>
+						</View>
 					</View>
 				</Card>
 				<Comments loading={this.state.refreshing} item={story && story.content && story.content.data} />
@@ -81,16 +89,40 @@ class Story extends React.Component {
 export default Story;
 
 const styles = StyleSheet.create({
+   info: {
+	flexDirection: 'row',
+	flex: 1,
+	borderTopColor: 'grey',
+	borderTopWidth: StyleSheet.hairlineWidth,
+	marginTop: 3,
+	paddingTop: 3,
+  },
+  infoContainer: {
+	flex: 1,
+	alignItems: 'center',
+  },
+  infoText: {
+	fontSize: 14,
+  },
+  content: {
+  	flex: 8,
+  	flexDirection: 'column',
+  },
   titleText: {
 	fontSize: 18,
     fontWeight: '500',
   	padding: 1,
   },
-  titleContainer: {
-	  padding: 10,
-  },
   link: {
   	color: 'blue',
   	padding: 1,
+  },
+  pointsContainer: {
+  	flex: 1,
+  	alignItems: 'center',
+  },
+  points: {
+    fontWeight: 'bold',
+	fontSize: 18,
   },
 });
