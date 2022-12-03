@@ -11,7 +11,7 @@ A modern cross-platform HackerNews client built on React Native
 </p>
 
 <p align="center">
-<img src="https://github.com/G2Jose/ReactNative-HackerNews/raw/refactor/redux/screenshots/iOS/top.png" width="300" />  <img src="https://github.com/G2Jose/ReactNative-HackerNews/raw/refactor/redux/screenshots/iOS/comments.png" width="300" />
+<img src="https://raw.githubusercontent.com/G2Jose/ReactNative-HackerNews/master/screenshots/iOS/top.png" width="300" />  <img src="https://raw.githubusercontent.com/G2Jose/ReactNative-HackerNews/master/screenshots/iOS/comments.png" width="300" />
 </p>
 
 ## Features
