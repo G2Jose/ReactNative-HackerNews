@@ -21,7 +21,7 @@
     "prettier": "^1.7.4",
     "prop-types": "^15.6.0",
     "react-dom": "16.0.0-beta.5",
-    "react-native-scripts": "1.7.0",
+    "react-native-scripts": "^1.14.0",
     "react-test-renderer": "16.0.0-beta.5"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
@@ -51,9 +51,9 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "expo": "^22.0.2",
-    "react": "16.0.0-beta.5",
-    "react-native": "^0.49.5",
+    "expo": "27",
+    "react": "16.3.1",
+    "react-native": "^0.55.4",
     "react-native-elements": "^0.17.0",
     "react-native-render-html": "^3.5.0",
     "react-navigation": "^1.0.0-beta.21",
