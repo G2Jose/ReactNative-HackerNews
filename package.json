@@ -38,13 +38,14 @@
     "react": "16.0.0-alpha.12",
     "react-native": "^0.48.4",
     "react-native-elements": "^0.17.0",
+    "react-native-render-html": "^3.5.0",
     "react-navigation": "^1.0.0-beta.15",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-actions": "^2.2.1",
     "redux-observable": "^0.16.0",
-    "rxjs": "^5.5.1",
-    "remote-redux-devtools": "^0.5.12"
+    "remote-redux-devtools": "^0.5.12",
+    "rxjs": "^5.5.1"
   },
   "lint-staged": {
     "*.{js,json,css}": ["prettier --write", "git add"]

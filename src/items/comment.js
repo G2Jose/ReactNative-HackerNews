@@ -1,16 +1,17 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import HTML from 'react-native-render-html';
 
 const Separator = () => <Text style={styles.metaText}> | </Text>;
 
 const Comment = props => {
-  const { _loading, text, by, kids } = props;
+  const { _loading, text, by, kids, items } = props;
   const numComments = (kids && kids.length) || 0;
   if (!_loading) {
     return (
       <TouchableOpacity>
         <View style={styles.container}>
-          <Text style={styles.commentText}>{text}</Text>
+          <HTML html={text} />
           <View style={styles.metaRow}>
             <Text style={styles.metaText}>
               {numComments} {numComments === 1 ? 'comment' : 'comments'}
@@ -38,7 +39,7 @@ const Comment = props => {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
-    marginLeft: 10,
+    marginLeft: 15,
     marginRight: 10,
   },
   commentText: {
