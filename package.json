@@ -1,17 +1,22 @@
 {
-  "name": "hacker-news",
+  "name": "hn",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "jest-expo": "^0.4.0",
-    "react-native-scripts": "0.0.29",
-    "react-test-renderer": "16.0.0-alpha.6",
-    "babel-eslint": "^7.2.0",
-    "esformatter": "^0.10.0",
-    "esformatter-jsx": "^7.4.1",
-    "eslint": "^3.18.0",
-    "eslint-plugin-react": "^6.10.3",
-    "eslint-plugin-react-native": "^2.3.1"
+    "babel-eslint": "^8.0.1",
+    "babel-plugin-module-resolver": "^2.7.1",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.6.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "husky": "^0.14.3",
+    "jest-expo": "^21.0.2",
+    "lint-staged": "^4.3.0",
+    "prettier": "^1.7.4",
+    "react-native-scripts": "1.5.0",
+    "react-test-renderer": "16.0.0-alpha.12"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
@@ -20,23 +25,28 @@
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
     "test": "node node_modules/jest/bin/jest.js --watch",
-    "beautify": "./node_modules/.bin/esformatter -i 'src/**/*.js'",
-    "lint":
-      "./node_modules/.bin/eslint '**/*.js' --ignore-pattern 'node_modules/**/*.*' --ignore-pattern 'App.test.js'"
+    "precommit": "lint-staged",
+    "prettify":
+      "prettier \"./**/*.{js,json,css}\" --config .prettierrc.json -l --write",
+    "lint": "eslint ./"
   },
   "jest": {
     "preset": "jest-expo"
   },
   "dependencies": {
-    "axios": "^0.16.1",
-    "eslint": "^3.19.0",
-    "expo": "^17.0.0",
-    "he": "^1.1.1",
-    "mobx": "^3.1.9",
-    "mobx-react": "^4.1.8",
-    "react": "16.0.0-alpha.6",
-    "react-native": "^0.43.4",
-    "react-native-navbar": "^1.7.1",
-    "react-navigation": "^1.0.0-beta.9"
+    "expo": "^21.0.0",
+    "react": "16.0.0-alpha.12",
+    "react-native": "^0.48.4",
+    "react-native-elements": "^0.17.0",
+    "react-navigation": "^1.0.0-beta.15",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-actions": "^2.2.1",
+    "redux-observable": "^0.16.0",
+    "rxjs": "^5.5.1",
+    "remote-redux-devtools": "^0.5.12"
+  },
+  "lint-staged": {
+    "*.{js,json,css}": ["prettier --write", "git add"]
   }
 }

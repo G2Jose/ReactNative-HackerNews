@@ -1,9 +1,8 @@
 {
-    "compilerOptions": {
-        "allowJs": true,
-        "allowSyntheticDefaultImports": true
-    },
-    "exclude": [
-        "node_modules"
-    ]
+  "compilerOptions": {
+    "target": "ES6",
+    "baseUrl": "./src/",
+    "module": "es6"
+  },
+  "exclude": ["bin", "build"]
 }

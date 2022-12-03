@@ -1,25 +1,51 @@
 module.exports = {
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'airbnb',
+    'prettier',
+    'prettier/flowtype',
+    'prettier/react',
+    'prettier/standard',
+  ],
+  rules: {},
   env: {
-    es6: true,
-    node: true
+    browser: true,
+    node: true,
+    jest: true,
   },
-  extends: "eslint:recommended",
-  parser: "babel-eslint",
+  plugins: ['react'],
   parserOptions: {
+    sourceType: 'module',
+    ecmaVersion: 8,
     ecmaFeatures: {
       experimentalObjectRestSpread: true,
-      jsx: true
+      jsx: true,
     },
-    sourceType: "module"
   },
-  plugins: ["react", "react-native"],
   rules: {
-    indent: ["error", 2],
-    "linebreak-style": ["error", "unix"],
-    quotes: ["error", "single"],
-    semi: ["error", "always"],
-    "react-native/no-unused-styles": 2,
-    "react/jsx-uses-react": 2,
-    "react/jsx-uses-vars": "error"
-  }
+    'no-console': [
+      'warn',
+      {
+        allow: ['info', 'warn', 'error'],
+      },
+    ],
+    'react/jsx-uses-vars': 1,
+    'react/prop-types': 0,
+    'react/prefer-stateless-function': 2,
+    'import/extensions': 0,
+    'react/jsx-filename-extension': 0,
+    'react/prefer-stateless-function': 0,
+    'import/prefer-default-export': 0,
+    'import/first': 0,
+    'no-use-before-define': 0,
+    'no-underscore-dangle': 0,
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        paths: ['src'],
+      },
+    },
+  },
 };
