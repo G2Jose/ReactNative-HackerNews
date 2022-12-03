@@ -1,29 +1,15 @@
 {
-  "presets": ["babel-preset-expo"],
-  "env": {
-    "development": {
-      "plugins": [
-        ["transform-react-jsx-source"],
-        [
-          "module-resolver",
-          {
-            "root": ["./src"],
-            "alias": {}
-          }
-        ]
-      ]
-    },
-    "production": {
-      "plugins": [
-        ["transform-react-jsx-source"],
-        [
-          "module-resolver",
-          {
-            "root": ["./src"],
-            "alias": {}
-          }
-        ]
-      ]
-    }
-  }
+  "presets": ["babel-preset-react-native-stage-0/decorator-support"],
+  "plugins": [
+    ["transform-react-jsx-source"],
+    [
+      "module-resolver",
+      {
+        "root": ["./src"],
+        "cwd": "babelrc",
+        "extensions": [".js", ".ios.js", ".android.js"],
+        "alias": {}
+      }
+    ]
+  ]
 }
