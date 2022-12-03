@@ -51,11 +51,14 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "appcenter": "^1.5.1",
+    "appcenter-analytics": "^1.5.1",
+    "appcenter-crashes": "^1.5.1",
     "expo": "27",
     "react": "16.3.1",
     "react-native": "^0.55.4",
     "react-native-elements": "^0.17.0",
-    "react-native-render-html": "^3.5.0",
+    "react-native-render-html": "^3.10.0",
     "react-navigation": "^1.0.0-beta.21",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
