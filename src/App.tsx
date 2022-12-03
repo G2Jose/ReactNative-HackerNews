@@ -14,13 +14,6 @@ import Show from '~/screens/show';
 import Ask from '~/screens/ask';
 import Jobs from '~/screens/jobs';
 
-// import StorybookUI from '../storybook';
-
-// eslint-disable-next-line no-global-assign
-XMLHttpRequest = GLOBAL.originalXMLHttpRequest
-  ? GLOBAL.originalXMLHttpRequest
-  : GLOBAL.XMLHttpRequest;
-
 const Tab = createBottomTabNavigator();
 
 const Navigation = () => {
@@ -45,7 +38,7 @@ const Navigation = () => {
         },
       }}
       screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
+        tabBarIcon: () => {
           const Icons = {
             Top: 'chevron-up',
             Ask: 'question',
@@ -65,49 +58,6 @@ const Navigation = () => {
     </Tab.Navigator>
   );
 };
-
-// TabNavigator(
-//   {
-//     Top: {
-//       screen: Top,
-//     },
-//     New: {
-//       screen: New,
-//     },
-//     Show: {
-//       screen: Show,
-//     },
-//     Ask: {
-//       screen: Ask,
-//     },
-//     Jobs: {
-//       screen: Jobs,
-//     },
-//   },
-//   {
-//     tabBarPosition: 'bottom',
-//     animationEnabled: false,
-//     lazy: true,
-//     tabBarOptions: {
-//       activeTintColor: '#000000',
-//       activeBackgroundColor: '#FF6701',
-//       showIcon: true,
-//       iconStyle: {
-//         width: 35,
-//         height: 30,
-//       },
-//       labelStyle: {
-//         color: 'black',
-//       },
-//       style: {
-//         backgroundColor: '#F7F7F7',
-//       },
-//       indicatorStyle: {
-//         backgroundColor: '#FF6701',
-//       },
-//     },
-//   }
-// );
 
 const { StatusBarManager } = NativeModules;
 

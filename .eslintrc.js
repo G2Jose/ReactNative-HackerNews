@@ -8,24 +8,20 @@ module.exports = {
     'prettier/react',
     'prettier/standard',
   ],
-  rules: {},
   env: {
     browser: true,
     node: true,
     jest: true,
   },
   plugins: ['react'],
-  parserOptions: {
-    sourceType: 'module',
-    ecmaVersion: 8,
-    ecmaFeatures: {
-      experimentalObjectRestSpread: true,
-      jsx: true,
-    },
-  },
+  parser: '@typescript-eslint/parser',
+
   rules: {
     'react/no-unescaped-entities': 0,
+    'react/jsx-props-no-spreading': 0,
+    'react/destructuring-assignment': 0,
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'import/no-unresolved': [2, { caseSensitive: false }],
     'no-console': [
       'warn',
       {
@@ -37,7 +33,6 @@ module.exports = {
     'react/prefer-stateless-function': 2,
     'import/extensions': 0,
     'react/jsx-filename-extension': 0,
-    'react/prefer-stateless-function': 0,
     'import/prefer-default-export': 0,
     'import/first': 0,
     'no-use-before-define': 0,
@@ -47,9 +42,7 @@ module.exports = {
   },
   settings: {
     'import/resolver': {
-      node: {
-        paths: ['src'],
-      },
+      typescript: {},
     },
   },
 };
