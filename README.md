@@ -13,47 +13,22 @@ The app currently has the following functionality:
 - Pull to refresh & cool loading animations
 
 ### Screenshots
-<img src="https://raw.githubusercontent.com/G2Jose/ReactHackerNews/master/img/headlines.png" width="300" />
-<img src="https://raw.githubusercontent.com/G2Jose/ReactHackerNews/master/img/story.png" width="300" />
-<img src="https://raw.githubusercontent.com/G2Jose/ReactHackerNews/master/img/video.gif" width="300" />
-
-### TODO
-
-The following functionality is planned: 
-
-- Display username of authors of stories and comments
-- Display time / time elapsed since story / comment was posted
-- Load next page of stories on scroll down
-- Refresh page on pull down gesture
-- Styling and visual improvements
-- Option to change text sizes
-- Android support
+<img src="https://raw.githubusercontent.com/G2Jose/ReactHackerNews/master/screenshots/headlines.png" width="300" />
+<img src="https://raw.githubusercontent.com/G2Jose/ReactHackerNews/master/screenshots/story.png" width="300" />
+<img src="https://raw.githubusercontent.com/G2Jose/ReactHackerNews/master/screenshots/video.gif" width="300" />
 
 ## How to run
 1. Install node, npm
-	
-	```
-	brew install node
-	```
-2. Set up watchman
-    
-    ```
-    brew install watchman
-    ```
-3. Install react-native-cli
-    
-    ```
-    npm install -g react-native-cli
-    ```
-4. Install dependencies 
-    
+2. Install dependencies
+
     ```
     cd ReactHackerNews && npm install
     ```
-5. Run project in iOS simulator
+
+3. Run project using expo
     
     ```
-    react-native run-ios
+    npm run start
     ```
-Alternatively, you can also open the .xcodeproj file directly on Xcode and run from there
 
+Alternatively, you can also open the .xcodeproj file directly on Xcode and run from there.
