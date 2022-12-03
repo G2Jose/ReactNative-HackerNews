@@ -25,9 +25,8 @@ The app currently has the following functionality:
 
 ### Screenshots
 <p align="center">
-<img src="https://raw.githubusercontent.com/G2Jose/ReactNative-HackerNews/master/screenshots/headlines.png" width="300" />  <img src="https://raw.githubusercontent.com/G2Jose/ReactNative-HackerNews/master/screenshots/story.png" width="300" />
+<img src="https://raw.githubusercontent.com/G2Jose/ReactNative-HackerNews/master/screenshots/headlines_iphone7plusgold_portrait.png" width="300" />  <img src="https://raw.githubusercontent.com/G2Jose/ReactNative-HackerNews/master/screenshots/story_iphone7plusgold_portrait.png" width="300" />
 </p>
-<p align="center"><img src="https://raw.githubusercontent.com/G2Jose/ReactNative-HackerNews/master/screenshots/headlines_loading.png" width="300" />  <img src="https://raw.githubusercontent.com/G2Jose/ReactNative-HackerNews/master/screenshots/story_loading.png" width="300" /></p>
 
 ## How to run
 1. Install node, npm
