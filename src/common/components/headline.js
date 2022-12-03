@@ -1,24 +1,28 @@
 import React from 'react';
-import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import Separator from 'common/components/separator';
 
 import { colors } from 'common/constants';
 
-const Headline = ({ _loading, title, by, score, descendants, viewDetails }) => {
+const Headline = ({ _loading, title, by, score, descendants, type }) => {
   if (!_loading) {
     return (
-      <TouchableOpacity onPress={viewDetails}>
-        <View style={styles.container} onPress={viewDetails}>
-          <Text style={styles.headlineText}>{title}</Text>
-          <View style={styles.metaRow}>
-            <Text style={styles.metaText}>{score} pts</Text>
-            <Separator />
-            <Text style={styles.metaText}>{descendants || 0} comments</Text>
-            <Separator />
-            <Text style={styles.metaText}>by {by}</Text>
-          </View>
+      <View style={styles.container}>
+        <Text
+          style={
+            type === 'hyperlink' ? styles.hyperlinkText : styles.headlineText
+          }
+        >
+          {title}
+        </Text>
+        <View style={styles.metaRow}>
+          <Text style={styles.metaText}>{score} pts</Text>
+          <Separator />
+          <Text style={styles.metaText}>{descendants || 0} comments</Text>
+          <Separator />
+          <Text style={styles.metaText}>by {by}</Text>
         </View>
-      </TouchableOpacity>
+      </View>
     );
   }
   return (
@@ -45,6 +49,11 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0.5,
   },
   headlineText: {
+    fontSize: 17,
+    fontWeight: 'bold',
+  },
+  hyperlinkText: {
+    color: 'blue',
     fontSize: 17,
     fontWeight: 'bold',
   },
