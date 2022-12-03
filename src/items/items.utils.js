@@ -15,3 +15,6 @@ export const padWithLoadingItems = (
   ...arrayToPad,
   ...createPlaceholderItems(targetLength - arrayToPad.length),
 ];
+
+export const getNumItems = itemsToCount =>
+  (itemsToCount && itemsToCount.length) || 0;

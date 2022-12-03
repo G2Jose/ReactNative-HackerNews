@@ -4,6 +4,7 @@ import HTML from 'react-native-render-html';
 
 import CommentLoading from 'comments/comment.loading.ui';
 import MetaRow from 'comments/metarow.ui';
+import { getNumItems } from 'items/items.utils';
 
 class Comment extends React.Component {
   constructor(props) {
@@ -18,37 +19,32 @@ class Comment extends React.Component {
     }
   }
 
-  numKids() {
-    return (this.props && this.props.kids && this.props.kids.length) || 0;
-  }
-
   symbolToDisplay() {
-    if (this.state && !this.state.expanded && this.numKids() > 0) return '+';
-    if (this.state && this.state.expanded && this.numKids() > 0) return '-';
+    const numComments = getNumItems(this.props.kids);
+    if (this.state && !this.state.expanded && numComments > 0) return '+';
+    if (this.state && this.state.expanded && numComments > 0) return '-';
     return '';
   }
 
   handleExpand() {
-    if (this.numKids() > 0) this.setState({ expanded: !this.state.expanded });
+    const numComments = getNumItems(this.props.kids);
+    if (numComments > 0) this.setState({ expanded: !this.state.expanded });
   }
 
   render() {
     const {
       props: { _loading, text, by, kids, items, id, fetchComment },
       state: { expanded },
-      numKids,
-      handleExpand,
-      symbolToDisplay,
     } = this;
-    const numComments = numKids();
+    const numComments = getNumItems(this.props.kids);
     if (!_loading) {
       return (
-        <TouchableOpacity onPress={handleExpand.bind(this)}>
+        <TouchableOpacity onPress={this.handleExpand.bind(this)}>
           <View style={styles.container}>
             {text ? <HTML html={text} /> : <Text />}
             <MetaRow
               numComments={numComments}
-              expandSymbol={symbolToDisplay()}
+              expandSymbol={this.symbolToDisplay()}
               id={id}
               by={by}
             />
