@@ -53,7 +53,7 @@ class Comment extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			showSubcomments: true,
+			showSubcomments: false,
 		};
 	}
 
@@ -89,21 +89,21 @@ export { LoadingComment };
 export default Comment;
 
 const styles = StyleSheet.create({
-  commentContainer: {
-  	paddingTop: 1,
+	commentContainer: {
+		paddingTop: 1,
 		paddingBottom: 1,
 		paddingLeft: 11,
 		paddingRight: 1,
 		flex: 1,
-  },
-  comment: {
+	},
+	comment: {
 		marginLeft: 3,
 		marginRight: 3,
-  },
-  commentText: {
+	},
+	commentText: {
 		fontFamily: 'Helvetica',
 		fontSize: 16,
-  },
+	},
 	loadingCommentText: {
 		// flex: 1,
 		height: 15,
