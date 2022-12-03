@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, RefreshControl } from 'react-native';
+import { StyleSheet, Text, View, RefreshControl, Linking } from 'react-native';
 import { observer } from 'mobx-react/native';
 
 import Card from './card.js';
@@ -54,16 +54,22 @@ class Story extends React.Component {
 		return (
 			<ScrollView
 				refreshControl={
-          <RefreshControl
-            refreshing={this.state.refreshing}
-            onRefresh={() => this._onRefresh(id)}
-          />
-        }
+					<RefreshControl
+						refreshing={this.state.refreshing}
+						onRefresh={() => this._onRefresh(id)}
+					/>
+				}
 			>
 				<Card>
 					<View style={styles.titleContainer}>
 						<Text style={styles.titleText}>
 							{story.title}
+						</Text>
+						<Text
+							style={styles.link}
+							onPress={() => Linking.openURL(story.url)}
+						>
+							{`↗️${story.url}`}
 						</Text>
 					</View>
 				</Card>
@@ -84,5 +90,10 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
 	  padding: 10,
-  }
+  },
+  link: {
+  	fontFamily: 'Helvetica',
+  	color: 'blue',
+  	padding: 1,
+  },
 });

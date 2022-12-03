@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableHighlight, Button } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight, Button, Linking } from 'react-native';
 
 import Comments from './comments.js';
 import Card from './card.js';
@@ -52,8 +52,8 @@ const styles = StyleSheet.create({
 	
   },
   comment: {
-	marginLeft: 2,
-	marginRight: 2,
+	marginLeft: 3,
+	marginRight: 3,
   },
   commentText: {
 	fontFamily: 'Helvetica',
