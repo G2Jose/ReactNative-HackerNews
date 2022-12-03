@@ -5,6 +5,7 @@ import HTML from 'react-native-render-html';
 import CommentLoading from 'comments/comment.loading.ui';
 import MetaRow from 'comments/metarow.ui';
 import { getNumItems } from 'items/items.utils';
+import { recursivelyCheckIfKidsChanged } from 'comments/comment.utils';
 
 class Comment extends React.Component {
   constructor(props) {
@@ -17,6 +18,34 @@ class Comment extends React.Component {
     if (!_loading && !_loaded) {
       fetchComment(id);
     }
+  }
+
+  shouldComponentUpdate(newProps, newState) {
+    const oldProps = this.props;
+    const oldState = this.state;
+    if (
+      oldProps._loading !== newProps._loading ||
+      oldProps.text !== newProps.text ||
+      oldProps.by !== newProps.by ||
+      oldProps.kids !== newProps.kids ||
+      oldProps.id !== newProps.id ||
+      oldProps.fetchComment !== newProps.fetchComment ||
+      oldProps.items[oldProps.id] !== newProps.items[oldProps.id] ||
+      oldState !== newState ||
+      oldProps._loaded !== newProps._loaded
+    )
+      return true;
+
+    if (
+      recursivelyCheckIfKidsChanged(
+        newProps.kids,
+        oldProps.items,
+        newProps.items
+      )
+    )
+      return true;
+    console.log('Prevented unnecessary update');
+    return false;
   }
 
   symbolToDisplay() {
