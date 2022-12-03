@@ -6,11 +6,11 @@ import 'rxjs';
 
 import store from 'common/store/store';
 
-import Top from 'top/screens/top';
-import New from 'new/screens/new';
-import Show from 'show/screens/show';
-import Ask from 'ask/screens/ask';
-import Jobs from 'jobs/screens/jobs';
+import Top from 'screens/top';
+import New from 'screens/new';
+import Show from 'screens/show';
+import Ask from 'screens/ask';
+import Jobs from 'screens/jobs';
 
 import StorybookUI from './storybook';
 

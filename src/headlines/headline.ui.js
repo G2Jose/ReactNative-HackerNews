@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 import Separator from 'common/components/separator';
-import HeadlineLoading from 'common/components/headline.loading.ui';
+import HeadlineLoading from 'headlines/headline.loading.ui';
 
 class Headline extends React.Component {
   componentWillReceiveProps(nextProps) {

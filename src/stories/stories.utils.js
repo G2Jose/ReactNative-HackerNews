@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchIds } from 'stories/stories.actions';
 import { fetchItem } from 'items/items.actions';
+import { fetchHeadlineIds } from 'headlines/headlines.actions';
 import { getStoriesOfType } from 'stories/stories.selectors';
 
 export const withStoryData = (Component, type = 'top') => {
@@ -13,8 +13,8 @@ export const withStoryData = (Component, type = 'top') => {
   });
 
   const mapDispatchToProps = dispatch => ({
-    fetchStories: () => {
-      dispatch(fetchIds({ type }));
+    fetchHeadlineIds: () => {
+      dispatch(fetchHeadlineIds({ type }));
     },
     fetchItemForId: id => {
       dispatch(fetchItem({ id }));

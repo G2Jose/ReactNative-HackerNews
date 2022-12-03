@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
-import Headline from 'common/components/headline';
+import Headline from 'headlines/headline.ui';
 import Story from 'stories/story.ui';
 import {
   mapScreenPropsToProps,
@@ -22,12 +22,12 @@ class Headlines extends React.Component {
     this._onRefresh = this._onRefresh.bind(this);
   }
   componentDidMount() {
-    this.props.fetchStories();
+    this.props.fetchHeadlineIds();
   }
 
   _onRefresh() {
     this.setState({ refreshing: true });
-    this.props.fetchStories();
+    this.props.fetchHeadlineIds();
     this.setState({ refreshing: false });
   }
 
@@ -73,7 +73,7 @@ Headlines.navigationOptions = {
   header: null,
 };
 
-const Stories = StackNavigator(
+const HeadlinesStack = StackNavigator(
   {
     Home: {
       screen: mapScreenPropsToProps(Headlines),
@@ -86,7 +86,7 @@ const Stories = StackNavigator(
   { initialRouteName: 'Home', headerMode: 'screen' }
 );
 
-export default Stories;
+export default HeadlinesStack;
 
 const styles = StyleSheet.create({
   stories: {
