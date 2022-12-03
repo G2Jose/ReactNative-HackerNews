@@ -84,4 +84,6 @@ const ReduxApp = () => (
   </Provider>
 );
 
-export default (process.env.storybook === 'true' ? StorybookUI : ReduxApp);
+export default (process.env.REACT_NATIVE_STORYBOOK === 'true'
+  ? StorybookUI
+  : ReduxApp);
