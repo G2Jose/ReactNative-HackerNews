@@ -1,26 +1,16 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Icon } from 'react-native-elements';
 
-import Stories from 'common/components/stories';
+import Stories from 'stories/stories';
+import { withStoryData } from 'stories/stories.utils';
 
-import { fetchNewStories } from 'new/new.actions';
-
-const New = props => <Stories screenProps={props} />;
+const New = ({ stories, fetchStories }) => (
+  <Stories screenProps={{ stories, fetchStories }} />
+);
 
 New.navigationOptions = {
   tabBarLabel: 'New',
   tabBarIcon: () => <Icon name="newspaper-o" type="font-awesome" />,
 };
 
-const mapStateToProps = state => ({
-  stories: state.newStories,
-});
-
-const mapDispatchToProps = dispatch => ({
-  fetchStories: () => {
-    dispatch(fetchNewStories());
-  },
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(New);
+export default withStoryData(New, 'new');

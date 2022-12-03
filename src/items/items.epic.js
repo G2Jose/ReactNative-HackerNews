@@ -6,12 +6,8 @@ import { Observable } from 'rxjs';
 import { getItemUrl, getIdsUrl } from 'common/api/urls';
 import { numStoriesToDisplay } from 'common/constants';
 
-import {
-  fetchItem,
-  itemFetched,
-  fetchIds,
-  idsFetched,
-} from 'items/items.actions';
+import { idsFetched, fetchIds } from 'stories/stories.actions';
+import { fetchItem, itemFetched } from 'items/items.actions';
 
 const fetchItemEpic = action$ =>
   action$

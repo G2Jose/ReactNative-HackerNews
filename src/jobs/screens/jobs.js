@@ -1,16 +1,16 @@
 import React from 'react';
-import { View } from 'react-native';
 import { Icon } from 'react-native-elements';
 
-class Jobs extends React.Component {
-  render() {
-    return <View />;
-  }
-}
+import Stories from 'stories/stories';
+import { withStoryData } from 'stories/stories.utils';
+
+const Jobs = ({ stories, fetchStories }) => (
+  <Stories screenProps={{ stories, fetchStories }} />
+);
 
 Jobs.navigationOptions = {
   tabBarLabel: 'Jobs',
   tabBarIcon: () => <Icon name="suitcase" type="font-awesome" />,
 };
 
-export default Jobs;
+export default withStoryData(Jobs, 'job');
