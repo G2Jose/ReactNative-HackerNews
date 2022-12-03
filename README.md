@@ -3,7 +3,7 @@
 </p>
 
 <strong><h1 style="text-align: center;">React Native Hacker News</h1></strong>
-A cross-platform HackerNews client built on React Native using CRNA, Expo and MobX
+A cross-platform HackerNews client built on React Native
 
 <p align="center">
     <a href="https://exp.host/@gejose/hacker-news"><img src="https://raw.githubusercontent.com/G2Jose/ReactNative-HackerNews/master/screenshots/expo.png" width="200" /></a>
@@ -20,22 +20,27 @@ A cross-platform HackerNews client built on React Native using CRNA, Expo and Mo
 ## Features 
 The app currently has the following functionality:
 
-- Display a list of top stories on the home page.
-- Clicking on a top story link from the home page takes the user to a detailed story page including comments.
-- Pull to refresh & cool loading animations
+- Headlines - Top, New, Show, Ask, Jobs
+- Touching a headline takes you to a comments view
+- Lazy loading data, loading views
+- Pull to refresh
+
+## Technologies Used
+- React Native
+- Redux for state management
+- Redux Observable, RxJS for side effects handling
+- Reselect for memoized selectors
 
 ## How to run
-1. Install node, npm
+1. Install node, yarn
 2. Install dependencies
 
     ```
-    cd ReactHackerNews && npm install
+    yarn
     ```
 
 3. Run project using expo
     
     ```
-    npm run start
+    yarn start
     ```
-
-Alternatively, you can also open the .xcodeproj file directly on Xcode and run from there.
