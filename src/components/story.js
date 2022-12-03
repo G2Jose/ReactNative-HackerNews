@@ -37,7 +37,7 @@ class Story extends React.Component {
 
 	componentDidMount() {
 		const { id } = this.props.navigation.state.params;
-		this._updateStory(id, setTimeout(() => this.setState({refreshing: false}), loadingParams.commentLoadDuration));
+		this._updateStory(id, setTimeout(() => this.setState({refreshing: false}), loadingParams.commentLoadDuration/2));
 	}
 
 	_onRefresh = (id) => {
