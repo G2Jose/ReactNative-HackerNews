@@ -1,24 +1,20 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableHighlight, Button } from 'react-native';
 
-const Card = ({ onPress, children, bigShadow }) => {
+const Card = ({onPress, children, bigShadow}) => {
   console.log('bigShadow', bigShadow);
   return (
-    <TouchableHighlight
-      onPress={onPress}
-      activeOpacity={0.8}
-      style={styles.touchable}
-    >
-      <View style={bigShadow ? StyleSheet.flatten([styles.card, {
-        shadowOffset: {
-          height: 4,
-          width: 4,
-        },
-      }]) : styles.card}>
-        {children}
+    <TouchableHighlight onPress={ onPress } activeOpacity={ 0.8 } style={ styles.touchable }>
+      <View style={ bigShadow ? StyleSheet.flatten([styles.card, {
+                      shadowOffset: {
+                        height: 4,
+                        width: 4,
+                      },
+                    }]) : styles.card }>
+        { children }
       </View>
     </TouchableHighlight>
-  );
+    );
 }
 
 const styles = StyleSheet.create({
@@ -43,7 +39,7 @@ const styles = StyleSheet.create({
       height: 1,
       width: 1
     },
-     borderRadius: 5,
+    borderRadius: 5,
   },
 });
 
