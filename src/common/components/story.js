@@ -21,11 +21,12 @@ class Story extends React.Component {
   render() {
     const { story, items } = this.props;
     const comments =
-      story &&
-      story.kids &&
-      story.kids
-        .map(commentId => items[commentId])
-        .map(item => (!item ? { _loading: true, _loaded: false } : item));
+      (story &&
+        story.kids &&
+        story.kids
+          .map(commentId => items[commentId])
+          .map(item => (!item ? { _loading: true, _loaded: false } : item))) ||
+      [];
     return (
       <View style={styles.headlineContainer}>
         <Headline {...story} />
