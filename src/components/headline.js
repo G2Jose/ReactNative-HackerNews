@@ -12,7 +12,7 @@ class LoadingHeadline extends React.Component {
 		};
 	}
 	_animateLoading = () => {
-		createRepeatingFadeAnimation(this.state.fadeAnim, 500, 0.5, 0.8, 10).start();
+		createRepeatingFadeAnimation(this.state.fadeAnim, loadingParams.iterationDuration, 0.5, 0.8, 10).start();
 	}
 	componentDidMount() {
 		this._animateLoading();
