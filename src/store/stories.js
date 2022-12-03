@@ -6,6 +6,9 @@ const createStory = (storyData) => ({
 	points: storyData.points,
 	content: null,
 	url: storyData.url,
+	timeAgo: storyData.time_ago,
+	commentCount: storyData.comments_count,
+	author: storyData.user,
 });
 
 class Stories {

@@ -34,19 +34,22 @@ class LoadingHeadline extends React.Component {
 				<View style={styles.content}>
 					<Animated.View style={StyleSheet.flatten([styles.loadingTitle, {
 						opacity: this.state.fadeAnim
-					}])}>
-					</Animated.View>
+					}])} />
 					<Animated.View style={StyleSheet.flatten([styles.loadingTitle, {
 						opacity: this.state.fadeAnim
-					}])}>
-					</Animated.View>
+					}])} />
+					<View style={styles.info}>
+						<View style={styles.loadingInfoContainer}><Animated.View style={StyleSheet.flatten([styles.loadingInfoText, {opacity: this.state.fadeAnim}])} /></View>
+						<View style={styles.loadingInfoContainer}><Animated.View style={StyleSheet.flatten([styles.loadingInfoText, {opacity: this.state.fadeAnim}])} /></View>
+						<View style={styles.loadingInfoContainer}><Animated.View style={StyleSheet.flatten([styles.loadingInfoText, {opacity: this.state.fadeAnim}])} /></View>
+					</View>
 				</View>
 			</Card>
 		);
 	}
 }
 
-const Headline = ({ loading, title, body, points, onPress }) => {
+const Headline = ({ loading, title, body, points, onPress, timeAgo, commentCount, author }) => {
 	if (loading)
 		return <LoadingHeadline />;
 	return (
@@ -57,6 +60,11 @@ const Headline = ({ loading, title, body, points, onPress }) => {
 			<View style={styles.content}>
 				<Text style={styles.title}>{title}</Text>
 				{body && <Text>{body}</Text>}
+				<View style={styles.info}>
+					<View style={styles.infoContainer}><Text style={styles.infoText}>{timeAgo}</Text></View>
+					<View style={styles.infoContainer}><Text style={styles.infoText}>{`${commentCount} comments`}</Text></View>
+					<View style={styles.infoContainer}><Text style={styles.infoText}>{author}</Text></View>
+				</View>
 			</View>
 		</Card>
 	);
@@ -66,6 +74,30 @@ export default Headline;
 
 
 const styles = StyleSheet.create({
+  info: {
+	flexDirection: 'row',
+	flex: 1,
+	borderTopColor: 'grey',
+	borderTopWidth: StyleSheet.hairlineWidth,
+	marginTop: 3,
+	paddingTop: 3,
+  },
+  infoContainer: {
+	flex: 1,
+	alignItems: 'center',
+  },
+  loadingInfoContainer: {
+	flex: 1,
+  },
+  infoText: {
+	fontSize: 14,
+  },
+  loadingInfoText: {
+	height: 15,
+	backgroundColor: 'grey',
+	margin: 2,
+	opacity: 0.2,
+  },
   content: {
   	flex: 6,
   	flexDirection: 'column',
@@ -77,14 +109,13 @@ const styles = StyleSheet.create({
   },
   pointsContainer: {
   	flex: 1,
-  	flexDirection: 'column',
   	alignItems: 'center',
   },
   points: {
     fontWeight: 'bold',
   },
 	loadingPointsContainer: {
-		flex: 1,
+	flex: 1,
   	flexDirection: 'column',
 	},
 	loadingPoints: {
@@ -99,5 +130,6 @@ const styles = StyleSheet.create({
 		backgroundColor: 'grey',
 		margin: 2,
 		opacity: 0.2,
+		flex: 1,
 	},
 });
