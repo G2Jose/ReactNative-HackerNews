@@ -3,7 +3,7 @@
 </p>
 
 <strong><h1 style="text-align: center;">React Native Hacker News</h1></strong>
-A cross-platform HackerNews client built on React Native
+A modern cross-platform HackerNews client built on React Native
 
 <p align="center">
     <a href="https://exp.host/@gejose/hacker-news"><img src="https://raw.githubusercontent.com/G2Jose/ReactNative-HackerNews/master/screenshots/expo.png" width="200" /></a>
@@ -30,6 +30,11 @@ The app currently has the following functionality:
 - Redux for state management
 - Redux Observable, RxJS for side effects handling
 - Reselect for memoized selectors
+- [HackerNews API](https://github.com/HackerNews/API)
+
+## Dev Tooling
+- Eslint for linting
+- Prettier, lint-staged for code formatting
 
 ## How to run
 1. Install node, yarn
