@@ -110,6 +110,6 @@ const styles = StyleSheet.create({
 		backgroundColor: 'grey',
 		marginTop: 2,
 		marginBottom: 2,
-		opacity: 0.3,
+		opacity: 0.2,
 	}
 });
