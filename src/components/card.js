@@ -1,16 +1,21 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight, Button } from 'react-native';
 
 const Card = ({ title, body, points }) => (
-	<View style={styles.card}>
-		<View style={styles.pointsContainer}>
-			{points && <Text style={styles.points}>{points}</Text>}
-		</View>
-		<View style={styles.cardContent}>
-			<Text style={styles.cardTitle}>{title}</Text>
-			{body && <Text>{body}</Text>}
-		</View>
-	</View>
+  <TouchableHighlight
+    onPress={() => console.log('here')}
+    activeOpacity={0.9}
+  >
+    <View style={styles.card}>
+      <View style={styles.pointsContainer}>
+        {points && <Text style={styles.points}>{points}</Text>}
+      </View>
+      <View style={styles.cardContent}>
+        <Text style={styles.cardTitle}>{title}</Text>
+        {body && <Text>{body}</Text>}
+      </View>
+    </View>
+  </TouchableHighlight>
 )
 
 const styles = StyleSheet.create({
@@ -22,8 +27,6 @@ const styles = StyleSheet.create({
     padding: 11,
     paddingLeft: 0,
     marginTop: 5,
-    marginLeft: 7,
-    marginRight: 7,
     shadowColor: "#BFC0BF",
     shadowOpacity: 0.6,
     shadowRadius: 2,
