@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
   },
   comment: {
 		marginLeft: 3,
-		marginRight: 0,
+		marginRight: 3,
   },
   commentText: {
 		fontFamily: 'Helvetica',
