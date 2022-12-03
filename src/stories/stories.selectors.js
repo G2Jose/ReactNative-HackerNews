@@ -1,13 +1,15 @@
 import { createSelector } from 'reselect';
 
-import { padWithPlaceholderStories } from 'items/items.utils';
+import { padWithLoadingItems, createPlaceholderItems } from 'items/items.utils';
 
 const idsSelector = state => state.stories;
 const itemsSelector = state => state.items;
 
 export const getStoriesOfType = type =>
   createSelector(idsSelector, itemsSelector, (ids, items) =>
-    padWithPlaceholderStories(
-      ids[type].map(id => items[id]).filter(item => item)
+    padWithLoadingItems(
+      ids[type]
+        .map(id => items[id])
+        .map(item => item || createPlaceholderItems(1))
     )
   );

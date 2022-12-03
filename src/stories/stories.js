@@ -26,17 +26,18 @@ class Headlines extends React.Component {
   }
 
   render() {
-    const { navigation: { navigate } } = this.props;
+    const {
+      props: { navigation: { navigate }, stories },
+      state: { refreshing },
+      _onRefresh,
+    } = this;
     return (
       <View style={styles.stories}>
         <FlatList
           refreshControl={
-            <RefreshControl
-              refreshing={this.state.refreshing}
-              onRefresh={this._onRefresh}
-            />
+            <RefreshControl refreshing={refreshing} onRefresh={_onRefresh} />
           }
-          data={this.props.stories}
+          data={stories}
           renderItem={({ item }) => (
             <Headline
               {...item}
