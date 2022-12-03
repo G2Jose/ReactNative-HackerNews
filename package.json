@@ -1,74 +1,78 @@
 {
   "name": "hacker-news",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
-  "devDependencies": {
-    "@storybook/addon-actions": "^3.2.17",
-    "@storybook/addon-links": "^3.2.17",
-    "@storybook/react-native": "^3.2.17",
-    "babel-eslint": "^8.0.1",
-    "babel-plugin-module-resolver": "^2.7.1",
-    "concurrently": "^3.5.1",
-    "eslint": "^4.9.0",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-config-prettier": "^2.6.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.4.0",
-    "husky": "^0.14.3",
-    "jest-expo": "^22.0.0",
-    "lint-staged": "^4.3.0",
-    "prettier": "^1.7.4",
-    "prop-types": "^15.6.0",
-    "react-dom": "16.0.0-beta.5",
-    "react-native-scripts": "^1.14.0",
-    "react-test-renderer": "16.0.0-beta.5"
-  },
-  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
-    "start": "react-native-scripts start",
-    "start:clean":
-      "rm -fr $TMPDIR/react-* node_modules yarn.lock && yarn && yarn start",
-    "eject": "react-native-scripts eject",
-    "android": "react-native-scripts android",
-    "ios": "react-native-scripts ios",
-    "test":
-      "NODE_PATH=src node node_modules/jest/bin/jest.js --verbose --watch",
-    "test:ci":
-      "CI=true NODE_PATH=src node node_modules/jest/bin/jest.js --verbose",
-    "precommit": "lint-staged",
-    "prettify":
-      "prettier \"./**/*.{js,json,css}\" --config .prettierrc.json -l --write",
-    "lint": "eslint ./",
-    "storybook":
-      "concurrently \"REACT_NATIVE_STORYBOOK=true storybook start -p 7007\" \"REACT_NATIVE_STORYBOOK=true react-native-scripts ios\"",
-    "storybook:ios":
-      "concurrently \"REACT_NATIVE_STORYBOOK=true storybook start -p 7007\" \"REACT_NATIVE_STORYBOOK=true react-native-scripts ios\"",
-    "storybook:android":
-      "concurrently \"REACT_NATIVE_STORYBOOK=true storybook start -p 7007\" \"REACT_NATIVE_STORYBOOK=true react-native-scripts android\""
-  },
-  "jest": {
-    "preset": "jest-expo"
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "test:ci": "jest",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "appcenter": "^1.5.1",
-    "appcenter-analytics": "^1.5.1",
-    "appcenter-crashes": "^1.5.1",
-    "expo": "27",
-    "react": "16.3.1",
-    "react-native": "^0.55.4",
-    "react-native-elements": "^0.17.0",
-    "react-native-render-html": "^3.10.0",
-    "react-navigation": "^1.0.0-beta.21",
-    "react-redux": "^5.0.6",
-    "redux": "^3.7.2",
-    "redux-actions": "^2.2.1",
+    "@babel/preset-typescript": "^7.10.1",
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-navigation/bottom-tabs": "^5.6.1",
+    "@react-navigation/native": "^5.6.1",
+    "@react-navigation/stack": "^5.6.2",
+    "appcenter": "^3.0.3",
+    "appcenter-analytics": "^3.0.3",
+    "appcenter-crashes": "^3.0.3",
+    "eslint-config-airbnb-typescript": "^8.0.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "install": "^0.13.0",
+    "npm": "^6.14.5",
+    "react": "16.11.0",
+    "react-native": "0.62.2",
+    "react-native-elements": "^2.0.2",
+    "react-native-gesture-handler": "^1.6.1",
+    "react-native-reanimated": "^1.9.0",
+    "react-native-render-html": "^4.2.0",
+    "react-native-safe-area-context": "^3.0.7",
+    "react-native-screens": "^2.9.0",
+    "react-native-vector-icons": "^6.6.0",
+    "react-native-webview": "^10.3.2",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-actions": "^2.6.5",
     "redux-observable": "^0.16.0",
-    "remote-redux-devtools": "^0.5.12",
-    "reselect": "^3.0.1",
+    "remote-redux-devtools": "^0.5.16",
+    "reselect": "^4.0.0",
     "rxjs": "^5.5.1"
   },
-  "lint-staged": {
-    "*.{js,json,css}": ["prettier --write", "git add"]
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/runtime": "^7.6.2",
+    "@react-native-community/eslint-config": "^1.0.0",
+    "@types/jest": "^24.0.24",
+    "@types/react-native": "^0.62.0",
+    "@types/react-navigation": "^3.4.0",
+    "@types/react-redux": "^7.1.9",
+    "@types/react-test-renderer": "16.9.2",
+    "@typescript-eslint/eslint-plugin": "^3.1.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "babel-jest": "^24.9.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "eslint": "^6.5.1",
+    "eslint-plugin-import": "^2.20.1",
+    "jest": "^24.9.0",
+    "metro-react-native-babel-preset": "^0.58.0",
+    "prettier": "^2.0.4",
+    "react-test-renderer": "16.11.0",
+    "typescript": "^3.8.3"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }
