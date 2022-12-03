@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native'
+import { Platform, StyleSheet } from 'react-native'
 
 export const rootStyles = StyleSheet.create({
-  text: { color: '#C6C6C6', fontSize: 12 },
+  text: { color: 'white', fontSize: Platform.OS === 'macos' ? 12 : 14 },
   background: { backgroundColor: '#1C2430' },
 })

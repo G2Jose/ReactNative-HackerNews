@@ -7,6 +7,7 @@ import {
   StyleProp,
   ViewStyle,
   Linking,
+  Platform,
 } from 'react-native'
 import { rootStyles } from './styles'
 import { useItem } from './useItem'
@@ -47,9 +48,11 @@ export const HeadlineView = ({
             <Text style={[styles.title, bold && styles.titleBold]}>
               {story.title}
             </Text>
-            <Text style={styles.domain}>{`(${
-              urlParse(story.url).hostname
-            })`}</Text>
+            {urlParse(story.url).hostname ? (
+              <Text style={styles.domain}>{`(${
+                urlParse(story.url).hostname
+              })`}</Text>
+            ) : null}
           </View>
         </View>
 
@@ -70,23 +73,21 @@ const styles = StyleSheet.create({
     ...rootStyles.text,
     fontSize: 17,
     color: '#F1C56D',
+    fontWeight: Platform.OS === 'macos' ? 'normal' : 'bold',
   },
   titleBold: {
     fontWeight: 'bold',
   },
   numComments: {
     ...rootStyles.text,
-    fontSize: 12,
     color: '#CDF67D',
   },
   numPoints: {
     ...rootStyles.text,
-    fontSize: 12,
     color: '#5DCFE6',
   },
   divider: {
     ...rootStyles.text,
-    fontSize: 12,
     color: '#CCCAC2',
   },
   row: {
@@ -95,5 +96,9 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     alignItems: 'center',
   },
-  domain: { marginLeft: 4 },
+  domain: {
+    ...rootStyles.text,
+    marginLeft: 4,
+    color: '#DDDDDF',
+  },
 })
