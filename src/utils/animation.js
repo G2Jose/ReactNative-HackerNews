@@ -20,7 +20,7 @@ const loadingParams = {
 	minOpacity: 0.3,
 	maxOpacity: 0.7,
 	iterationDuration: 500,
-	totalDuration: 1500,
+	totalDuration: 2000,
 };
 
 export {

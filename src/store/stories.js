@@ -23,7 +23,7 @@ class Stories {
 
 	updateStory(id, story) {
 		const index = this.storiesList.findIndex(story => story.id === id);
-		if (index && index !== -1) {
+		if (index !== -1) {
 			this.storiesList[index]['content'] = story;
 		}
 	}
