@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { backgroundColor } from 'common/constants';
 import Headline from 'common/components/headline';
-import Comment from 'items/comment';
+import Comment from 'comments/comment.ui';
 
 import { fetchItem } from 'items/items.actions';
 
@@ -38,7 +38,7 @@ class Story extends React.Component {
                 <Comment
                   {...item}
                   items={items}
-                  fetchItemForId={fetchItemForId}
+                  fetchComment={fetchItemForId}
                 />
               )}
             keyExtractor={(item, index) => (item && item.id) || index}

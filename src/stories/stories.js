@@ -3,7 +3,7 @@ import { View, FlatList, RefreshControl, StyleSheet } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 import Headline from 'common/components/headline';
-import Story from 'common/components/story';
+import Story from 'stories/story.ui';
 import {
   mapScreenPropsToProps,
   mapNavigationStateParamsToProps,
