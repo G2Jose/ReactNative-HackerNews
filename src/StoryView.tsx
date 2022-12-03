@@ -5,6 +5,8 @@ import {
   Text,
   ScrollView,
   StyleSheet,
+  ViewStyle,
+  StyleProp,
 } from 'react-native'
 import { useItem } from './useItem'
 import { CommentView } from './CommentView'
@@ -14,9 +16,11 @@ import { rootStyles } from './styles'
 export const StoryView = ({
   id,
   onPressBack: onPressBack,
+  style,
 }: {
   id: number
   onPressBack: (id?: number) => void
+  style: StyleProp<ViewStyle>
 }) => {
   const headlineQuery = useItem(id)
 
@@ -27,7 +31,7 @@ export const StoryView = ({
   const headline = headlineQuery.data
 
   return (
-    <View style={styles.rootView}>
+    <View style={[styles.rootView, style]}>
       <ScrollView>
         <TouchableOpacity
           style={styles.backButton}
@@ -40,7 +44,7 @@ export const StoryView = ({
           onPressBehavior="open-url"
         />
 
-        <View style={{ paddingHorizontal: 8 * 2, paddingVertical: 4 }}>
+        <View style={styles.commentContainer}>
           {headline?.kids?.map(id => (
             <CommentView id={id} />
           ))}
@@ -62,4 +66,5 @@ const styles = StyleSheet.create({
   headline: {
     marginHorizontal: 8,
   },
+  commentContainer: { paddingHorizontal: 8 * 2, paddingVertical: 4 },
 })

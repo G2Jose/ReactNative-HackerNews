@@ -1,5 +1,11 @@
 import React, { useEffect } from 'react'
-import { FlatList, RefreshControl, StyleSheet } from 'react-native'
+import {
+  FlatList,
+  RefreshControl,
+  StyleProp,
+  StyleSheet,
+  ViewStyle,
+} from 'react-native'
 import { useQuery, useQueryClient } from 'react-query'
 import { rootStyles } from './styles'
 import { HeadlineView } from './HeadlineView'
@@ -8,8 +14,10 @@ import { DATA_INVALIDATION_TIMEOUT } from './constants'
 
 export const TopHeadlines = ({
   onViewComments,
+  style,
 }: {
   onViewComments: (id: number) => void
+  style: StyleProp<ViewStyle>
 }) => {
   const queryClient = useQueryClient()
 
@@ -40,7 +48,7 @@ export const TopHeadlines = ({
   return (
     <FlatList
       contentInsetAdjustmentBehavior="automatic"
-      style={styles.headLinesView}
+      style={[styles.headLinesView, style]}
       data={topIds}
       renderItem={x => {
         return (

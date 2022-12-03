@@ -15,7 +15,6 @@ export function useItem(id: number) {
   }, [queryClient, id])
 
   return useQuery<Item>(['item', id], async () => {
-    console.log('xxx fetching')
     const response = await fetch(
       `https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`,
     )
