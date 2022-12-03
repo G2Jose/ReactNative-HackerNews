@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import Separator from 'common/components/separator';
 
+import Separator from 'common/components/separator';
+import HeadlineLoading from 'common/components/headline.loading.ui';
 import { colors } from 'common/constants';
 
 const Headline = ({ _loading, title, by, score, descendants, type }) => {
@@ -25,19 +26,7 @@ const Headline = ({ _loading, title, by, score, descendants, type }) => {
       </View>
     );
   }
-  return (
-    <View style={styles.container}>
-      <View style={styles.loadingTitle} />
-      <View style={styles.loadingTitle} />
-      <View style={styles.metaRow}>
-        <View style={styles.metaTextLoading} />
-        <Separator />
-        <View style={styles.metaTextLoading} />
-        <Separator />
-        <View style={styles.metaTextLoading} />
-      </View>
-    </View>
-  );
+  return <HeadlineLoading />;
 };
 
 const styles = StyleSheet.create({
@@ -57,23 +46,12 @@ const styles = StyleSheet.create({
     fontSize: 17,
     fontWeight: 'bold',
   },
-  loadingTitle: {
-    backgroundColor: colors.loadingTextPlaceholder,
-    height: 17,
-    marginTop: 3,
-    marginBottom: 3,
-  },
   metaRow: {
     flex: 0,
     flexDirection: 'row',
   },
   metaText: {
     color: 'grey',
-  },
-  metaTextLoading: {
-    backgroundColor: '#999999',
-    height: 17,
-    width: 75,
   },
 });
 
