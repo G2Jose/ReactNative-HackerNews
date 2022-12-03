@@ -37,7 +37,6 @@ const Headline = ({ _loading, title, by, score, descendants, viewDetails }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     padding: 10,
     marginLeft: 10,
     marginRight: 10,
@@ -53,7 +52,7 @@ const styles = StyleSheet.create({
     marginBottom: 3,
   },
   metaRow: {
-    flex: 1,
+    flex: 0,
     flexDirection: 'row',
   },
   metaText: {
