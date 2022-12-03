@@ -2,10 +2,9 @@
     <a href="https://exp.host/@gejose/hacker-news"><img src="https://raw.githubusercontent.com/G2Jose/ReactNative-HackerNews/master/screenshots/ReactNativeHackerNewsIcon.png" width="200" /></a>
 </p>
 
-<p align="center" >
-	<strong>React Native Hacker News</strong>
+<p align="center">
+	React Native Hacker News
 </p>
-
 A cross-platform HackerNews client built on React Native using CRNA, Expo and MobX
 
 <p align="center">
