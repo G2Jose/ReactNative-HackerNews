@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView as SV, StyleSheet } from 'react-native';
+import { ScrollView as SV, StyleSheet, View } from 'react-native';
 
 const ScrollView = ({ children, ...rest }) => {
 	return (
@@ -7,7 +7,9 @@ const ScrollView = ({ children, ...rest }) => {
 			style={styles.scrollView}
 			{...rest}
 		>
-			{children}
+			<View style={{marginBottom: 10}}>
+				{children}
+			</View>
 		</SV>
 	);
 }
