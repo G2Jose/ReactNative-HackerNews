@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "babel-eslint": "^7.2.0",
     "esformatter": "^0.10.0",
     "esformatter-jsx": "^7.4.1",
+    "eslint": "^3.18.0",
+    "eslint-plugin-react": "^6.10.3",
+    "eslint-plugin-react-native": "^2.3.1",
     "jest-expo": "^0.3.0",
     "react-native-scripts": "0.0.22",
     "react-test-renderer": "~15.4.1"
@@ -16,7 +20,8 @@
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
     "test": "node node_modules/jest/bin/jest.js --watch",
-    "beautify": "./node_modules/.bin/esformatter -i 'src/**/*.js'"
+    "beautify": "./node_modules/.bin/esformatter -i 'src/**/*.js'",
+    "lint": "./node_modules/.bin/eslint 'src/**/*.js'"
   },
   "jest": {
     "preset": "jest-expo"

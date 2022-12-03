@@ -16,7 +16,7 @@ const createRepeatingFadeAnimation = (state, duration, from, to, iterations) => 
     to = tempFrom;
   }
   return Animated.sequence(animatedTimings);
-}
+};
 const loadingParams = {
   iterations: 10,
   minOpacity: 0.2,

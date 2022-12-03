@@ -27,12 +27,12 @@ class Story extends React.Component {
   };
 
   _updateStory = (id, cb) => {
-    hnapi.getItem(id).then((story) => {
+    hnapi.getItem(id)
+    .then((story) => {
       storiesStore.updateStory(id, story);
       if (cb && typeof cb === 'function')
         cb();
-    })
-      .catch((error) => console.log('error'));
+    });
   }
 
   componentDidMount() {
@@ -90,7 +90,7 @@ class Story extends React.Component {
         </Card>
         <Comments loading={ this.state.refreshing } item={ story && story.content && story.content.data } />
       </ScrollView>
-      );
+    );
   }
 }
 
