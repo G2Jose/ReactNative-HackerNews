@@ -1,6 +1,12 @@
 {
   "expo": {
-    "sdkVersion": "15.0.0"
+    "sdkVersion": "15.0.0",
+    "ios": {
+      "bundleIdentifier": "com.georgejose.reactnativehackernews"
+    },
+    "android": {
+      "package": "com.georgejose.reactnativehackernews"
+    }
   },
   "name": "hackernews",
   "displayName": "HackerNews"
