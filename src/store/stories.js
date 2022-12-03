@@ -13,7 +13,7 @@ class Stories {
 	@observable storiesList: [];
 
 	constructor() {
-		autorun(() => console.log(this.storiesList));
+		autorun(() => console.log('updated stories'));
 	}
 
 	updateStories(stories) {
