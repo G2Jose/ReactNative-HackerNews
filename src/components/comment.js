@@ -62,6 +62,7 @@ class Comment extends React.Component {
 		return (
 			<View style={styles.comment}>
 				<Card
+					bigShadow={data.comments && data.comments.length > 0 && !this.state.showSubcomments || false}
 					onPress={() => {
 						this.setState({
 							showSubcomments: !this.state.showSubcomments,	
@@ -97,8 +98,8 @@ const styles = StyleSheet.create({
 		flex: 1,
 	},
 	comment: {
-		marginLeft: 3,
-		marginRight: 3,
+		marginLeft: 4,
+		// marginRight: 1,
 	},
 	commentText: {
 		fontFamily: 'Helvetica',
