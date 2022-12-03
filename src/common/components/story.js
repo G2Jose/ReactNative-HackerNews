@@ -13,13 +13,13 @@ class Story extends React.Component {
     const { story, items, fetchItemForId } = this.props;
     if (story && story.kids) {
       story.kids.forEach(id => {
-        if (!items.id) fetchItemForId(id);
+        if (!items.id && id) fetchItemForId(id);
       });
     }
   }
 
   render() {
-    const { story, items } = this.props;
+    const { story, items, fetchItemForId } = this.props;
     const comments =
       (story &&
         story.kids &&
@@ -33,7 +33,14 @@ class Story extends React.Component {
         {comments.length > 0 && (
           <FlatList
             data={comments}
-            renderItem={({ item }) => item && <Comment {...item} />}
+            renderItem={({ item }) =>
+              item && (
+                <Comment
+                  {...item}
+                  items={items}
+                  fetchItemForId={fetchItemForId}
+                />
+              )}
             keyExtractor={(item, index) => (item && item.id) || index}
           />
         )}
