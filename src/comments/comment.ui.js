@@ -78,9 +78,13 @@ class Comment extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
-    marginLeft: 12,
-    marginRight: 10,
+    paddingBottom: 7,
+    paddingTop: 7,
+    marginLeft: 15,
+    marginRight: 0,
+    borderWidth: 0,
+    borderColor: '#d6d7da',
+    borderBottomWidth: 0.5,
   },
   commentText: {
     fontSize: 15,

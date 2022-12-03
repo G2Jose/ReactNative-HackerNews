@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 
-import { backgroundColor } from 'common/constants';
+import { colors } from 'common/constants';
 import Headline from 'common/components/headline';
 import Comment from 'comments/comment.ui';
 
@@ -28,8 +28,10 @@ class Story extends React.Component {
           .map(item => (!item ? { _loading: true, _loaded: false } : item))) ||
       [];
     return (
-      <View style={styles.headlineContainer}>
-        <Headline {...story} />
+      <View style={styles.storyContainer}>
+        <View style={styles.headlineContainer}>
+          <Headline {...story} />
+        </View>
         {comments.length > 0 && (
           <FlatList
             data={comments}
@@ -40,7 +42,8 @@ class Story extends React.Component {
                   items={items}
                   fetchComment={fetchItemForId}
                 />
-              )}
+              )
+            }
             keyExtractor={(item, index) => (item && item.id) || index}
           />
         )}
@@ -50,15 +53,20 @@ class Story extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  headlineContainer: {
-    backgroundColor,
+  storyContainer: {
+    backgroundColor: colors.background,
     flex: 1,
+    paddingLeft: 0,
+    paddingRight: 15,
+  },
+  headlineContainer: {
+    paddingLeft: 15,
   },
 });
 
 Story.navigationOptions = {
   headerStyle: {
-    backgroundColor,
+    backgroundColor: colors.background,
   },
 };
 
