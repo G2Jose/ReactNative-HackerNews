@@ -37,7 +37,7 @@ const Navigation = TabNavigator(
   },
   {
     tabBarPosition: 'bottom',
-    animationEnabled: true,
+    animationEnabled: false,
     lazy: true,
     tabBarOptions: {
       activeTintColor: '#000000',
