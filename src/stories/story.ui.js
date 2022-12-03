@@ -9,7 +9,7 @@ import {
 import { connect } from 'react-redux';
 
 import { colors } from 'common/constants';
-import Headline from 'common/components/headline';
+import Headline from 'headlines/headline.ui';
 import Comment from 'comments/comment.ui';
 
 import { fetchItem } from 'items/items.actions';

@@ -1,10 +1,13 @@
 import { handleActions } from 'redux-actions';
 
-import { idsFetched, fetchIds } from 'stories/stories.actions';
+import {
+  headlineIdsFetched,
+  fetchHeadlineIds,
+} from 'headlines/headlines.actions';
 
 export default handleActions(
   {
-    [idsFetched().type](state, action) {
+    [headlineIdsFetched().type](state, action) {
       const { ids, type } = action.payload;
       const newState = { ...state };
       if (newState[type]) {
@@ -12,7 +15,7 @@ export default handleActions(
       }
       return newState;
     },
-    [fetchIds().type](state, action) {
+    [fetchHeadlineIds().type](state, action) {
       return { ...state, ...{ [action.payload.type]: [] } };
     },
   },
