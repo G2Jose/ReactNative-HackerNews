@@ -30,7 +30,9 @@ class Comment extends React.Component {
       oldProps.kids !== newProps.kids ||
       oldProps.id !== newProps.id ||
       oldProps.fetchComment !== newProps.fetchComment ||
-      oldProps.items[oldProps.id] !== newProps.items[oldProps.id] ||
+      (oldProps.items &&
+        oldProps.id &&
+        oldProps.items[oldProps.id] !== newProps.items[oldProps.id]) ||
       oldState !== newState ||
       oldProps._loaded !== newProps._loaded
     )
@@ -44,7 +46,6 @@ class Comment extends React.Component {
       )
     )
       return true;
-    console.log('Prevented unnecessary update');
     return false;
   }
 
