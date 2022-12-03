@@ -73,6 +73,11 @@ class Comment extends React.Component {
 						<Text style={styles.commentText}>
 							{removeHTML(data.content)}
 						</Text>
+						<View style={styles.info}>
+							<View style={styles.infoContainer}><Text style={styles.infoText}>{data.time_ago}</Text></View>
+							<View style={styles.infoContainer}><Text style={styles.infoText}>{data.user}</Text></View>
+							<View style={styles.infoContainer}><Text style={styles.infoText}>{`${data.comments.length} comments`}</Text></View>
+						</View>
 					</View>
 				</Card>
 				{
@@ -93,7 +98,7 @@ const styles = StyleSheet.create({
 	commentContainer: {
 		paddingTop: 1,
 		paddingBottom: 1,
-		paddingLeft: 11,
+		paddingLeft: 1,
 		paddingRight: 1,
 		flex: 1,
 	},
@@ -111,5 +116,20 @@ const styles = StyleSheet.create({
 		marginTop: 2,
 		marginBottom: 2,
 		opacity: 0.2,
-	}
+	},
+	info: {
+		flexDirection: 'row',
+		flex: 1,
+		borderTopColor: 'grey',
+		borderTopWidth: StyleSheet.hairlineWidth,
+		marginTop: 3,
+		paddingTop: 3,
+	},
+	infoContainer: {
+		flex: 1,
+		alignItems: 'center',
+	  },
+	  infoText: {
+	fontSize: 14,
+  },
 });
