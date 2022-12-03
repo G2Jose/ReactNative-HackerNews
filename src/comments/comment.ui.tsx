@@ -8,10 +8,12 @@ import {
 } from 'react-native';
 import HTML from 'react-native-render-html';
 
-import CommentLoading from 'comments/comment.loading.ui';
-import MetaRow from 'comments/metarow.ui';
-import { getNumItems } from 'items/items.utils';
-import { recursivelyCheckIfKidsChanged } from 'comments/comment.utils';
+import CommentLoading from '~/comments/comment.loading.ui';
+import MetaRow from '~/comments/metarow.ui';
+import { getNumItems } from '~/items/items.utils';
+import { recursivelyCheckIfKidsChanged } from '~/comments/comment.utils';
+
+// const HTML = () => null;
 
 class Comment extends React.Component {
   constructor(props) {
@@ -97,23 +99,22 @@ class Comment extends React.Component {
             />
             {expanded &&
               kids &&
-              kids.map(
-                _id =>
-                  items[_id] ? (
-                    <Comment
-                      {...items[_id]}
-                      key={_id}
-                      items={items}
-                      fetchComment={fetchComment}
-                    />
-                  ) : (
-                    <Comment
-                      {...{ _loading: false, loaded: false, id: _id }}
-                      key={_id}
-                      fetchComment={fetchComment}
-                      items={items}
-                    />
-                  )
+              kids.map((_id) =>
+                items[_id] ? (
+                  <Comment
+                    {...items[_id]}
+                    key={`${_id}`}
+                    items={items}
+                    fetchComment={fetchComment}
+                  />
+                ) : (
+                  <Comment
+                    {...{ _loading: false, loaded: false, id: _id }}
+                    key={`${_id}`}
+                    fetchComment={fetchComment}
+                    items={items}
+                  />
+                )
               )}
           </View>
         </TouchableOpacity>

@@ -1,21 +1,17 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-import Separator from 'common/components/separator';
-import HeadlineLoading from 'headlines/headline.loading.ui';
+import Separator from '~/common/components/separator';
+import HeadlineLoading from '~/headlines/headline.loading.ui';
 
 class Headline extends React.Component {
-  componentWillReceiveProps(nextProps) {
-    if (
-      nextProps.id &&
-      nextProps.fetchItemForId &&
-      !nextProps._loading &&
-      !nextProps._loaded &&
-      nextProps.isViewable
-    ) {
-      nextProps.fetchItemForId(nextProps.id);
+  componentDidUpdate() {
+    const { id, fetchItemForId, _loading, _loaded, isViewable } = this.props;
+    if (id && fetchItemForId && !_loading && !_loaded && isViewable) {
+      fetchItemForId(id);
     }
   }
+
   render() {
     const {
       _loaded,

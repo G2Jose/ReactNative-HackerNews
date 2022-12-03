@@ -8,30 +8,44 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 
-import { colors } from 'common/constants';
-import Headline from 'headlines/headline.ui';
-import Comment from 'comments/comment.ui';
+import { colors } from '~/common/constants';
+import Headline from '~/headlines/headline.ui';
+import Comment from '~/comments/comment.ui';
 
-import { fetchItem } from 'items/items.actions';
+import { fetchItem } from '~/items/items.actions';
 
 class Story extends React.Component {
   componentDidMount() {
-    const { story, items, fetchItemForId } = this.props;
+    const {
+      route: {
+        params: { story },
+      },
+      items,
+      fetchItemForId,
+    } = this.props;
     if (story && story.kids) {
-      story.kids.forEach(id => {
+      story.kids.forEach((id) => {
         if (!items.id && id) fetchItemForId(id);
       });
     }
   }
 
   render() {
-    const { story, items, fetchItemForId } = this.props;
+    const {
+      route: {
+        params: { story },
+      },
+      items,
+      fetchItemForId,
+    } = this.props;
     const comments =
       (story &&
         story.kids &&
         story.kids
-          .map(commentId => items[commentId])
-          .map(item => (!item ? { _loading: true, _loaded: false } : item))) ||
+          .map((commentId) => items[commentId])
+          .map((item) =>
+            !item ? { _loading: true, _loaded: false } : item
+          )) ||
       [];
     return (
       <View style={styles.storyContainer}>
@@ -80,12 +94,12 @@ Story.navigationOptions = {
   },
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   items: state.items,
 });
 
-const mapDispatchToProps = dispatch => ({
-  fetchItemForId: id => {
+const mapDispatchToProps = (dispatch) => ({
+  fetchItemForId: (id) => {
     dispatch(fetchItem({ id }));
   },
 });

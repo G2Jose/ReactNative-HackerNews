@@ -6,16 +6,19 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from '@react-navigation/stack';
 
-import Headline from 'headlines/headline.ui';
-import Story from 'stories/story.ui';
+import { connect } from 'react-redux';
+import Headline from '~/headlines/headline.ui';
+import Story from '~/stories/story.ui';
 import {
   mapScreenPropsToProps,
   mapNavigationStateParamsToProps,
-} from 'common/navigation';
+} from '~/common/navigation';
+import { withStoryData } from '~/stories/stories.utils';
+import { fetchHeadlineIds } from '~/headlines/headlines.actions';
 
-class Headlines extends React.Component {
+class HeadlinesBase extends React.Component {
   constructor(props) {
     super(props);
     this.state = { refreshing: false, viewableItems: new Set() };
@@ -26,19 +29,20 @@ class Headlines extends React.Component {
       viewAreaCoveragePercentThreshold: 0.1,
     };
   }
+
   componentDidMount() {
-    this.props.fetchHeadlineIds();
+    if (this.props.fetchHeadlineIds) this.props.fetchHeadlineIds();
   }
 
   _onRefresh() {
     this.setState({ refreshing: true });
-    this.props.fetchHeadlineIds();
+    if (this.props.fetchHeadlineIds) this.props.fetchHeadlineIds();
     this.setState({ refreshing: false });
   }
 
   _onViewableItemsChanged({ viewableItems }) {
     this.setState({
-      viewableItems: new Set(viewableItems.map(item => item.index)),
+      viewableItems: new Set(viewableItems.map((item) => item.index)),
     });
   }
 
@@ -81,22 +85,17 @@ class Headlines extends React.Component {
   }
 }
 
-Headlines.navigationOptions = {
-  header: null,
-};
+const Headlines = withStoryData(HeadlinesBase);
+const Stack = createStackNavigator();
 
-const HeadlinesStack = StackNavigator(
-  {
-    Home: {
-      screen: mapScreenPropsToProps(Headlines),
-      header: null,
-    },
-    Details: {
-      screen: mapNavigationStateParamsToProps(Story),
-    },
-  },
-  { initialRouteName: 'Home', headerMode: 'screen' }
-);
+const HeadlinesStack = (props) => {
+  return (
+    <Stack.Navigator headerMode="none">
+      <Stack.Screen name="Home" component={Headlines} />
+      <Stack.Screen name="Details" component={Story} />
+    </Stack.Navigator>
+  );
+};
 
 export default HeadlinesStack;
 
