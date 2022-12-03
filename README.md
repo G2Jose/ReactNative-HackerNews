@@ -15,39 +15,61 @@ A modern cross-platform HackerNews client built on React Native
 </p>
 
 ## Screenshots
+
 <p align="center">
 <img src="https://github.com/G2Jose/ReactNative-HackerNews/raw/refactor/redux/screenshots/iOS/top.png" width="300" />  <img src="https://github.com/G2Jose/ReactNative-HackerNews/raw/refactor/redux/screenshots/iOS/show.png" width="300" />
 </p>
 
-## Features 
+## Features
+
 The app currently has the following functionality:
 
-- Headlines - Top, New, Show, Ask, Jobs
-- Touching a headline takes you to a comments view
-- Lazy loading data, loading views
-- Pull to refresh
+* Headlines - Top, New, Show, Ask, Jobs
+* Touching a headline takes you to a comments view
+* Lazy loading data, loading views
+* Pull to refresh
 
 ## Technologies Used
-- React Native
-- Redux for state management
-- Redux Observable, RxJS for side effects handling
-- Reselect for memoized selectors
-- [HackerNews API](https://github.com/HackerNews/API)
+
+* React Native
+* Redux for state management
+* Redux Observable, RxJS for side effects handling
+* Reselect for memoized selectors
+* [HackerNews API](https://github.com/HackerNews/API)
 
 ## Dev Tooling
-- Eslint for linting
-- Prettier, lint-staged for code formatting
+
+* Eslint for linting
+* Prettier, lint-staged for code formatting
+* React [storybook](https://github.com/storybooks/storybook) for UI development & testing
 
 ## How to run
+
 1. Install node, yarn
 2. Install dependencies
 
-    ```
-    yarn
-    ```
+   ```
+   yarn
+   ```
 
 3. Run project using expo
-    
-    ```
-    yarn start
-    ```
+
+   ```
+   yarn start
+   ```
+
+## UI development / testing using storybook
+
+* After installing dependencies by running `yarn`,
+
+  ```
+  yarn storybook:ios
+  ```
+
+  or
+
+  ```
+  yarn storybook:android
+  ```
+
+to start a storybook at [http://localhost:7007/](http://localhost:7007/)
