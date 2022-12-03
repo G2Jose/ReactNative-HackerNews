@@ -7,7 +7,10 @@ import {
 
 export default handleActions(
   {
-    [headlineIdsFetched().type](state, action) {
+    [headlineIdsFetched().type](
+      state,
+      action: ReturnType<typeof headlineIdsFetched>
+    ) {
       const { ids, type } = action.payload;
       const newState = { ...state };
       if (newState[type]) {

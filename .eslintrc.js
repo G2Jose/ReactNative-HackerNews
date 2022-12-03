@@ -13,7 +13,7 @@ module.exports = {
     node: true,
     jest: true,
   },
-  plugins: ['react'],
+  plugins: ['@typescript-eslint', 'react'],
   parser: '@typescript-eslint/parser',
 
   rules: {
@@ -39,6 +39,8 @@ module.exports = {
     'no-underscore-dangle': 0,
     'react/jsx-no-bind': 0,
     camelcase: 0,
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': ['error'],
   },
   settings: {
     'import/resolver': {

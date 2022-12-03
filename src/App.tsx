@@ -16,13 +16,20 @@ import Jobs from '~/screens/jobs';
 
 const Tab = createBottomTabNavigator();
 
+const Icons = {
+  Top: 'chevron-up',
+  Ask: 'question',
+  Jobs: 'suitcase',
+  New: 'bar-chart',
+  Show: 'tv',
+} as { [key: string]: string };
+
 const Navigation = () => {
   return (
     <Tab.Navigator
       tabBarOptions={{
         activeTintColor: '#000000',
         activeBackgroundColor: '#FF6701',
-        showIcon: true,
         iconStyle: {
           width: 35,
           height: 30,
@@ -33,19 +40,9 @@ const Navigation = () => {
         style: {
           backgroundColor: '#F7F7F7',
         },
-        indicatorStyle: {
-          backgroundColor: '#FF6701',
-        },
       }}
       screenOptions={({ route }) => ({
         tabBarIcon: () => {
-          const Icons = {
-            Top: 'chevron-up',
-            Ask: 'question',
-            Jobs: 'suitcase',
-            New: 'bar-chart',
-            Show: 'tv',
-          };
           return <Icon name={Icons[route.name]} type="font-awesome" />;
         },
       })}
