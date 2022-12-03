@@ -40,6 +40,8 @@ module.exports = {
     'import/first': 0,
     'no-use-before-define': 0,
     'no-underscore-dangle': 0,
+    'react/jsx-no-bind': 0,
+    camelcase: 0,
   },
   settings: {
     'import/resolver': {
