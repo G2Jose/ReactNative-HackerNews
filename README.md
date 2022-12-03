@@ -14,7 +14,7 @@ A cross-platform HackerNews client built on React Native using CRNA, Expo and Mo
 
 ## Screenshots
 <p align="center">
-<img src="https://raw.githubusercontent.com/G2Jose/ReactNative-HackerNews/master/screenshots/headlines_iphone7plusgold_portrait.png" width="300" />  <img src="https://raw.githubusercontent.com/G2Jose/ReactNative-HackerNews/master/screenshots/story_iphone7plusgold_portrait.png" width="300" />
+<img src="https://raw.githubusercontent.com/G2Jose/ReactNative-HackerNews/refactor/redux/screenshots/iOS/top.png" width="300" />  <img src="https://raw.githubusercontent.com/G2Jose/ReactNative-HackerNews/master/screenshots/show.png" width="300" />
 </p>
 
 ## Features 
