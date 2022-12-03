@@ -12,7 +12,12 @@ class LoadingHeadline extends React.Component {
 		};
 	}
 	_animateLoading = () => {
-		createRepeatingFadeAnimation(this.state.fadeAnim, loadingParams.iterationDuration, 0.5, 0.8, 10).start();
+		createRepeatingFadeAnimation(
+			this.state.fadeAnim,
+			loadingParams.iterationDuration,
+			loadingParams.minOpacity, loadingParams.maxOpacity,
+			loadingParams.iterations
+		).start();
 	}
 	componentDidMount() {
 		this._animateLoading();
@@ -88,12 +93,12 @@ const styles = StyleSheet.create({
 		backgroundColor: 'grey',
 		marginLeft: 10,
 		marginRight: 10,
-		opacity: .5,
+		opacity: 0.3,
 	},
 	loadingTitle: {
 		height: 15,
 		backgroundColor: 'grey',
 		margin: 2,
-		opacity: .5,
+		opacity: 0.3,
 	},
 });

@@ -17,9 +17,9 @@ const createRepeatingFadeAnimation = (state, duration, from, to, iterations) => 
 }
 const loadingParams = {
 	iterations: 10,
-	from: 0.1,
-	to: 1.0,
-	durationPerIteration: 500,
+	minOpacity: 0.3,
+	maxOpacity: 0.7,
+	iterationDuration: 500,
 	totalDuration: 1500,
 };
 
