@@ -1,8 +1,7 @@
 import React from 'react';
 import { TabNavigator } from 'react-navigation';
 import { Provider } from 'react-redux';
-import { StatusBar, View } from 'react-native';
-import { Constants } from 'expo';
+import { StatusBar, View, Platform, NativeModules } from 'react-native';
 import 'rxjs';
 
 import store from 'common/store/store';
@@ -61,13 +60,15 @@ const Navigation = TabNavigator(
   }
 );
 
+const { StatusBarManager } = NativeModules;
+
 const App = () => (
   <View
     style={{
       flex: 1,
       flexDirection: 'row',
       backgroundColor: '#F6F6EF',
-      paddingTop: Constants.statusBarHeight,
+      paddingTop: Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT,
     }}
   >
     <StatusBar backgroundColor="orange" barStyle="dark-content" />
