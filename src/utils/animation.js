@@ -22,7 +22,7 @@ const loadingParams = {
   minOpacity: 0.2,
   maxOpacity: 0.5,
   iterationDuration: 500,
-  totalDuration: 2000,
+  totalDuration: 1000,
   commentLoadDuration: 1000,
 };
 
