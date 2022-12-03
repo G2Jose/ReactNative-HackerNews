@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import codePush from 'react-native-code-push';
 
 import { Provider } from 'react-redux';
 import { StatusBar, View, Platform, NativeModules } from 'react-native';
@@ -80,4 +81,6 @@ const ReduxApp = () => (
   </Provider>
 );
 
-export default ReduxApp;
+export default codePush({
+  checkFrequency: codePush.CheckFrequency.ON_APP_RESUME,
+})(ReduxApp);

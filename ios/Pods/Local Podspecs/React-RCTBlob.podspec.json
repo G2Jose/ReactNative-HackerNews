@@ -15,7 +15,11 @@
     "tag": "v0.62.2"
   },
   "source_files": "*.{m,mm}",
-  "preserve_paths": ["package.json", "LICENSE", "LICENSE-docs"],
+  "preserve_paths": [
+    "package.json",
+    "LICENSE",
+    "LICENSE-docs"
+  ],
   "header_dir": "RCTBlob",
   "pod_target_xcconfig": {
     "USE_HEADERMAP": "YES",
@@ -23,12 +27,26 @@
     "HEADER_SEARCH_PATHS": "\"$(PODS_ROOT)/Folly\""
   },
   "dependencies": {
-    "Folly": ["2018.10.22.00"],
-    "FBReactNativeSpec": ["0.62.2"],
-    "ReactCommon/turbomodule/core": ["0.62.2"],
-    "React-Core/RCTBlobHeaders": ["0.62.2"],
-    "React-Core/RCTWebSocket": ["0.62.2"],
-    "React-RCTNetwork": ["0.62.2"],
-    "React-jsi": ["0.62.2"]
+    "Folly": [
+      "2018.10.22.00"
+    ],
+    "FBReactNativeSpec": [
+      "0.62.2"
+    ],
+    "ReactCommon/turbomodule/core": [
+      "0.62.2"
+    ],
+    "React-Core/RCTBlobHeaders": [
+      "0.62.2"
+    ],
+    "React-Core/RCTWebSocket": [
+      "0.62.2"
+    ],
+    "React-RCTNetwork": [
+      "0.62.2"
+    ],
+    "React-jsi": [
+      "0.62.2"
+    ]
   }
 }
