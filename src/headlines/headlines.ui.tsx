@@ -100,5 +100,6 @@ const styles = StyleSheet.create({
   headlineContainer: {
     paddingLeft: 15,
     paddingRight: 15,
+    paddingTop: 15,
   },
 });
