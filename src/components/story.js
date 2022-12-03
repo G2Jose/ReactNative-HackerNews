@@ -39,7 +39,7 @@ class Story extends React.Component {
     const {id} = this.props.navigation.state.params;
     this._updateStory(id, setTimeout(() => this.setState({
       refreshing: false
-    }), loadingParams.commentLoadDuration / 2));
+    }), loadingParams.minCommentLoadDuration / 2));
   }
 
   _onRefresh = (id) => {
@@ -48,7 +48,7 @@ class Story extends React.Component {
     });
     this._updateStory(id, setTimeout(() => this.setState({
       refreshing: false
-    }), loadingParams.commentLoadDuration));
+    }), loadingParams.minCommentLoadDuration));
   }
 
   render() {

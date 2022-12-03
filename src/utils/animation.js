@@ -22,8 +22,8 @@ const loadingParams = {
   minOpacity: 0.2,
   maxOpacity: 0.5,
   iterationDuration: 500,
-  totalDuration: 1000,
-  commentLoadDuration: 1000,
+  minAnimationDuration: 0,
+  minCommentLoadDuration: 0,
 };
 
 export { createRepeatingFadeAnimation, loadingParams, };
