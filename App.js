@@ -1,28 +1,30 @@
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+import React from "react";
+import { StyleSheet, View } from "react-native";
+import { StackNavigator } from "react-navigation";
 
-import Headlines from './src/components/headlines.js';
-import storiesStore from './src/store/stories.js';
-import Story from './src/components/story.js';
+import Headlines from "./src/components/headlines.js";
+import storiesStore from "./src/store/stories.js";
+import Story from "./src/components/story.js";
 
-import { navigationOptions } from './src/utils/navigation.js';
+import { navigationOptions } from "./src/utils/navigation.js";
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: 'React Native Hacker News',
-    ...navigationOptions,
+    title: "React Native Hacker News",
+    ...navigationOptions
   };
-  
-  navigateToStory = (id) => {
+
+  navigateToStory = id => {
     const { navigate } = this.props.navigation;
-    navigate('Story', { id });
-  }
+    navigate("Story", { id });
+  };
   render() {
-    
     return (
       <View style={styles.container}>
-        <Headlines storiesStore={storiesStore} navigateToStory={this.navigateToStory} />
+        <Headlines
+          storiesStore={storiesStore}
+          navigateToStory={this.navigateToStory}
+        />
       </View>
     );
   }
@@ -30,13 +32,13 @@ class HomeScreen extends React.Component {
 
 const App = StackNavigator({
   Home: { screen: HomeScreen },
-  Story: { screen: Story },
+  Story: { screen: Story }
 });
 
 export default App;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-  },
+    flex: 1
+  }
 });

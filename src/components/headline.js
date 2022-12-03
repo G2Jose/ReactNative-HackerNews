@@ -1,58 +1,91 @@
-import React from 'react';
-import { View, Text, StyleSheet, Animated } from 'react-native';
+import React from "react";
+import { View, Text, StyleSheet, Animated } from "react-native";
 
-import { loadingParams, createRepeatingFadeAnimation } from '../utils/animation.js';
-import Card from './card.js';
+import {
+  loadingParams,
+  createRepeatingFadeAnimation
+} from "../utils/animation.js";
+import Card from "./card.js";
 
 class LoadingHeadline extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      fadeAnim: new Animated.Value(0),
+      fadeAnim: new Animated.Value(0)
     };
   }
   _animateLoading = () => {
     createRepeatingFadeAnimation(
       this.state.fadeAnim,
       loadingParams.iterationDuration,
-      loadingParams.minOpacity, loadingParams.maxOpacity,
+      loadingParams.minOpacity,
+      loadingParams.maxOpacity,
       loadingParams.iterations
     ).start();
-  }
+  };
   componentDidMount() {
     this._animateLoading();
   }
   render() {
     return (
       <Card>
-        <View style={ styles.loadingPointsContainer }>
-          <Animated.View style={ StyleSheet.flatten([styles.loadingPoints, {
-            opacity: this.state.fadeAnim
-          }]) }>
-          </Animated.View>
+        <View style={styles.loadingPointsContainer}>
+          <Animated.View
+            style={StyleSheet.flatten([
+              styles.loadingPoints,
+              {
+                opacity: this.state.fadeAnim
+              }
+            ])}
+          />
         </View>
-        <View style={ styles.content }>
-          <Animated.View style={ StyleSheet.flatten([styles.loadingTitle, {
-            opacity: this.state.fadeAnim
-          }]) } />
-          <Animated.View style={ StyleSheet.flatten([styles.loadingTitle, {
-            opacity: this.state.fadeAnim
-          }]) } />
-          <View style={ styles.info }>
-            <View style={ styles.loadingInfoContainer }>
-              <Animated.View style={ StyleSheet.flatten([styles.loadingInfoText, {
+        <View style={styles.content}>
+          <Animated.View
+            style={StyleSheet.flatten([
+              styles.loadingTitle,
+              {
                 opacity: this.state.fadeAnim
-              }]) } />
+              }
+            ])}
+          />
+          <Animated.View
+            style={StyleSheet.flatten([
+              styles.loadingTitle,
+              {
+                opacity: this.state.fadeAnim
+              }
+            ])}
+          />
+          <View style={styles.info}>
+            <View style={styles.loadingInfoContainer}>
+              <Animated.View
+                style={StyleSheet.flatten([
+                  styles.loadingInfoText,
+                  {
+                    opacity: this.state.fadeAnim
+                  }
+                ])}
+              />
             </View>
-            <View style={ styles.loadingInfoContainer }>
-              <Animated.View style={ StyleSheet.flatten([styles.loadingInfoText, {
-                opacity: this.state.fadeAnim
-              }]) } />
+            <View style={styles.loadingInfoContainer}>
+              <Animated.View
+                style={StyleSheet.flatten([
+                  styles.loadingInfoText,
+                  {
+                    opacity: this.state.fadeAnim
+                  }
+                ])}
+              />
             </View>
-            <View style={ styles.loadingInfoContainer }>
-              <Animated.View style={ StyleSheet.flatten([styles.loadingInfoText, {
-                opacity: this.state.fadeAnim
-              }]) } />
+            <View style={styles.loadingInfoContainer}>
+              <Animated.View
+                style={StyleSheet.flatten([
+                  styles.loadingInfoText,
+                  {
+                    opacity: this.state.fadeAnim
+                  }
+                ])}
+              />
             </View>
           </View>
         </View>
@@ -61,38 +94,34 @@ class LoadingHeadline extends React.Component {
   }
 }
 
-const Headline = ({loading, title, body, points, onPress, timeAgo, commentCount, author}) => {
-  if (loading)
-    return <LoadingHeadline />;
+const Headline = ({
+  loading,
+  title,
+  body,
+  points,
+  onPress,
+  timeAgo,
+  commentCount,
+  author
+}) => {
+  if (loading) return <LoadingHeadline />;
   return (
-    <Card onPress={ onPress }>
-      <View style={ styles.pointsContainer }>
-        <Text style={ styles.points }>
-          { points || '0' }
-        </Text>
+    <Card onPress={onPress}>
+      <View style={styles.pointsContainer}>
+        <Text style={styles.points}>{points || "0"}</Text>
       </View>
-      <View style={ styles.content }>
-        <Text style={ styles.title }>
-          { title }
-        </Text>
-        { body && <Text>
-                    { body }
-                  </Text> }
-        <View style={ styles.info }>
-          <View style={ styles.infoContainer }>
-            <Text style={ styles.infoText }>
-              { timeAgo }
-            </Text>
+      <View style={styles.content}>
+        <Text style={styles.title}>{title}</Text>
+        {body && <Text>{body}</Text>}
+        <View style={styles.info}>
+          <View style={styles.infoContainer}>
+            <Text style={styles.infoText}>{timeAgo}</Text>
           </View>
-          <View style={ styles.infoContainer }>
-            <Text style={ styles.infoText }>
-              { `${commentCount} comments` }
-            </Text>
+          <View style={styles.infoContainer}>
+            <Text style={styles.infoText}>{`${commentCount} comments`}</Text>
           </View>
-          <View style={ styles.infoContainer }>
-            <Text style={ styles.infoText }>
-              { author }
-            </Text>
+          <View style={styles.infoContainer}>
+            <Text style={styles.infoText}>{author}</Text>
           </View>
         </View>
       </View>
@@ -102,64 +131,63 @@ const Headline = ({loading, title, body, points, onPress, timeAgo, commentCount,
 
 export default Headline;
 
-
 const styles = StyleSheet.create({
   info: {
-    flexDirection: 'row',
+    flexDirection: "row",
     flex: 1,
-    borderTopColor: 'grey',
+    borderTopColor: "grey",
     borderTopWidth: StyleSheet.hairlineWidth,
     marginTop: 7,
-    paddingTop: 7,
+    paddingTop: 7
   },
   infoContainer: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center"
   },
   loadingInfoContainer: {
-    flex: 1,
+    flex: 1
   },
   infoText: {
-    fontSize: 14,
+    fontSize: 14
   },
   loadingInfoText: {
     height: 15,
-    backgroundColor: 'grey',
+    backgroundColor: "grey",
     margin: 2,
-    opacity: 0.2,
+    opacity: 0.2
   },
   content: {
     flex: 6,
-    flexDirection: 'column',
+    flexDirection: "column"
   },
   title: {
     fontSize: 17,
-    fontWeight: '400',
-    padding: 1,
+    fontWeight: "400",
+    padding: 1
   },
   pointsContainer: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center"
   },
   points: {
-    fontWeight: 'bold',
+    fontWeight: "bold"
   },
   loadingPointsContainer: {
     flex: 1,
-    flexDirection: 'column',
+    flexDirection: "column"
   },
   loadingPoints: {
     height: 20,
-    backgroundColor: 'grey',
+    backgroundColor: "grey",
     marginLeft: 10,
     marginRight: 10,
-    opacity: 0.2,
+    opacity: 0.2
   },
   loadingTitle: {
     height: 15,
-    backgroundColor: 'grey',
+    backgroundColor: "grey",
     margin: 2,
     opacity: 0.2,
-    flex: 1,
-  },
+    flex: 1
+  }
 });

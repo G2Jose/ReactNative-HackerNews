@@ -1,7 +1,7 @@
-import React from 'react';
-import { View, Animated } from 'react-native';
+import React from "react";
+import { View, Animated } from "react-native";
 
-import Comment, { LoadingComment } from './comment.js';
+import Comment, { LoadingComment } from "./comment.js";
 
 const LoadingComments = () => {
   return (
@@ -31,13 +31,10 @@ class Comments extends React.Component {
 
   spring() {
     this.state.springValue.setValue(0.9);
-    Animated.spring(
-      this.state.springValue,
-      {
-        toValue: 1,
-        friction: 10,
-      }
-    ).start();
+    Animated.spring(this.state.springValue, {
+      toValue: 1,
+      friction: 10
+    }).start();
   }
 
   componentDidMount() {
@@ -45,20 +42,20 @@ class Comments extends React.Component {
   }
 
   render() {
-    if (this.props.loading)
-      return <LoadingComments />;
+    if (this.props.loading) return <LoadingComments />;
     else if (this.props.item && this.props.item.comments) {
       return (
-        <Animated.View style={{transform: [{scale: this.state.springValue}]}}>
-          { this.props.item.comments.map((comment, i) => {
-            return <Comment data={ comment } key={ i } />;
-          }) }
+        <Animated.View
+          style={{ transform: [{ scale: this.state.springValue }] }}
+        >
+          {this.props.item.comments.map((comment, i) => {
+            return <Comment data={comment} key={i} />;
+          })}
         </Animated.View>
       );
     }
     return <LoadingComments />;
   }
 }
-
 
 export default Comments;

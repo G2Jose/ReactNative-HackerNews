@@ -1,6 +1,6 @@
-import { observable, autorun } from 'mobx';
+import { observable, autorun } from "mobx";
 
-const createStory = (storyData) => ({
+const createStory = storyData => ({
   id: storyData.id,
   title: storyData.title,
   points: storyData.points,
@@ -8,7 +8,7 @@ const createStory = (storyData) => ({
   url: storyData.url,
   timeAgo: storyData.time_ago,
   commentCount: storyData.comments_count,
-  author: storyData.user,
+  author: storyData.user
 });
 
 class Stories {
@@ -27,7 +27,7 @@ class Stories {
   updateStory(id, story) {
     const index = this.storiesList.findIndex(story => story.id === id);
     if (index !== -1) {
-      this.storiesList[index]['content'] = story;
+      this.storiesList[index]["content"] = story;
     }
   }
 }
