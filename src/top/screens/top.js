@@ -4,7 +4,8 @@ import { Icon } from 'react-native-elements';
 
 import Stories from 'common/components/stories';
 
-import { fetchTopStories } from 'top/top.actions';
+import { fetchIds } from 'items/items.actions';
+import { getStoriesOfType } from 'stories/stories.selectors';
 
 const Top = ({ stories, fetchStories }) => (
   <Stories screenProps={{ stories, fetchStories }} />
@@ -16,12 +17,12 @@ Top.navigationOptions = {
 };
 
 const mapStateToProps = state => ({
-  stories: state.topStories,
+  stories: getStoriesOfType('top')(state),
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchStories: () => {
-    dispatch(fetchTopStories());
+    dispatch(fetchIds({ type: 'top' }));
   },
 });
 
